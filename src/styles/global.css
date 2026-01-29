@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;700&family=Bebas+Neue:wght@400&family=Space+Grotesk:wght@400;500;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-family-poppins: 'Poppins', sans-serif;
+  --font-family-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --font-family-bebas: 'Bebas Neue', sans-serif;
+  --font-family-space: 'Space Grotesk', sans-serif;
+
+  --color-primary-bg: #fdfaf7;
+  --color-secondary-bg: #f7ede2;
+  --color-primary-text: #3b3c36;
+  --color-secondary-text: #fdfaf7;
+  --color-button-primary: #f6bd60;
+  --color-button-hover: #e9a9a0;
+  --color-yellow-bg: #f9d88f;
+  --color-rose-bg: #fdebea;
+  --color-sage-bg-light: #dfecea;
+  --color-sage-bg-dark: #3f5f59;
+}

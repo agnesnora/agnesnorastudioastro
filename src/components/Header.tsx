@@ -13,11 +13,11 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className="p-4 bg-primary-bg">
+    <header className="p-8 bg-primary-bg lg:px-48">
       {isMobile ? (
         <div className="flex justify-between items-center">
           <h1
-            className="font-bebas  font-bold tracking-tighter
+            className="font-family-bebas font-regular 
           text-xl"
           >
             AGNESNORA <br />
@@ -26,7 +26,15 @@ const Header: React.FC = () => {
           <LuAlignLeft className="text-2xl" />
         </div>
       ) : (
-        <h1 className="text-2xl font-bold">Desktop Header</h1>
+        <div className="flex justify-between items-center">
+          <h1
+            className="font-family-bebas font-regular 
+          text-xl"
+          >
+            AGNESNORA <br />
+            STUDIO
+          </h1>
+        </div>
       )}
     </header>
   );

@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Webdizján",
+    "description": "Stílusos, felhasználóbarát és reszponzív webdizájnok, amelyek erősítik a márkádat, bizalmat építenek, és profivá teszik az online megjelenésed..",
+    "features": [
+      "Egyedi megjelenés",
+      "Reszponzív layout",
+      "Komponens alapú UI",
+      "Felhasználóbarát tervezés",
+      "Figma alapú tervek"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Weboldalfejlesztés",
+    "description": "Gyors, reszponzív és jól felépített weboldalak, amelyek a növekedésre vannak tervezve, és stabil alapot adnak a vállalkozásodnak.",
+    "features": [
+      "Gyors és stabil Next.js alap",
+      "SEO barát",
+      "Tartalomkezelő rendszer",
+      "Marketing eszközök bekötése",
+      "Bővíthető struktúra"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Webalkalmazás fejlesztés",
+    "description": "Modern webalkalmazások felhasználóbarát felülettel, okos folyamatlogikával, adatkezeléssel és később is bővíthető modulokkal.",
+    "features": [
+      "Egyedi adminfelület és tartalomkezelés",
+      "Időpontfoglalás",
+      "Külső API-k integrálása",
+      "Bővíthető modulok",
+      "Jelentkezési, űrlap és adatküldő rendszerek",
+      "Felhasználói folyamatok"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Weboldal Audit és Migráció",
+    "description": "Meglévő weboldalak szakmai átvilágítása, technikai modernizálása és biztonságos költöztetése új környezetbe, adatvesztés nélkül.",
+    "features": [
+      "Technikai és SEO állapotfelmérés",
+      "Adatbázis és tartalom költöztetése",
+      "Domain és tárhely konfiguráció",
+      "Sebességoptimalizálás",
+      "Biztonsági frissítések és mentések",
+      "Platformváltás támogatása"
+    ]
+  }
+]

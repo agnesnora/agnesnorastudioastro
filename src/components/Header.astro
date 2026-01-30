@@ -1,0 +1,31 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<header class="p-8 bg-primary-bg lg:px-48">
+  <div class="flex justify-between items-center">
+    <h1 class="font-family-bebas font-regular text-xl">
+      AGNESNORA <br />
+      STUDIO
+    </h1>
+    <Icon name="mdi:menu" class="text-2xl lg:hidden" />
+    <nav class="hidden lg:block">
+      <ul class="flex gap-8 items-center">
+        <li><a href="#rolam">Rólam</a></li>
+        <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+        <li><a href="#munkaim">Munkáim</a></li>
+        <li><a href="#csomagok">Csomagok</a></li>
+        <li>
+          <a href="#contact" class="flex items-center gap-2">
+            <span>Kapcsolat</span>
+            <div
+              class="flex items-center justify-center w-8 h-8 bg-button-hover rounded-full"
+            >
+              <Icon name="mdi:arrow-right" class="text-primary-text" />
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -28,7 +28,7 @@ const AnimatedHeroText = ({
   return (
     <h1
       ref={container}
-      className="py-40 text-right font-light font-family-jakarta text-4xl leading-16 lg:text-left lg:text-6xl lg:font-bold"
+      // className="py-20 px-2 text-right  font-family-jakarta text-4xl leading-16 lg:text-left lg:text-6xl lg:font-bold"
     >
       {words.map((word, i) => {
         const start = i / words.length;

@@ -1,15 +1,18 @@
 import React from 'react';
-import services from '../data/services.json';
+import data from '../data/services.json';
 import Card from './Card';
 
 const AnimatedServiceCard = () => {
   return (
     <div>
-      {services.map((service) => (
+      {data.services.map((service) => (
         <Card
+          key={service.id}
           title={service.title}
           description={service.description}
           features={service.features}
+          bgColor={service.bgColor}
+          color={service.color}
         />
       ))}
     </div>

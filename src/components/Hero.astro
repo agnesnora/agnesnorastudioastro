@@ -3,7 +3,7 @@ import AnimatedHeroText from './AnimatedHeroText.tsx';
 ---
 
 <div class="w-full">
-  <section class="bg-orange-50 lg:p-48">
+  <section class="px-6 py-12 lg:p-48">
     <h1
       class="py-20 text-right font-light font-family-jakarta text-4xl leading-16 lg:text-left lg:text-6xl"
     >
@@ -14,7 +14,7 @@ import AnimatedHeroText from './AnimatedHeroText.tsx';
         class="flex flex-col items-center md:items-start md:ml-auto md:w-fit"
       >
         <p
-          class="text-left mb-6 md:text-left md:leading-7 lg:text-xl lg:leading-9"
+          class="text-left mb-6 font-family-space md:text-left md:leading-7 lg:text-xl lg:leading-9"
         >
           Letisztult dizájn és megbízható technológia <br
             class="hidden lg:block"
@@ -24,7 +24,7 @@ import AnimatedHeroText from './AnimatedHeroText.tsx';
         </p>
 
         <a
-          class="block w-fit p-4 bg-button-primary text-center rounded-md font-bold font-family-poppins"
+          class="block w-fit p-4 bg-button-primary text-center rounded-md font-bold font-family-inter"
           href="#contact"
         >
           Beszéljünk a projektedről!
@@ -33,14 +33,14 @@ import AnimatedHeroText from './AnimatedHeroText.tsx';
     </div>
   </section>
   <section
-    class="bg-dark-bg
-    text-primary-bg
-    text-2xl
-    font-bold
-    font-family-inter
+    class="bg-primary-bg
+    text-primary-text
+    font-black
+    text-left text-4xl
+    py-20 px-2 leading-16
     lg:px-48
-    py-32
-    text-left"
+   
+      lg:text-6xl"
   >
     <AnimatedHeroText client:load />
   </section>

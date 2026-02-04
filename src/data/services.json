@@ -1,52 +1,89 @@
-[
-  {
-    "id": 1,
-    "title": "Webdizján",
-    "description": "Stílusos, felhasználóbarát és reszponzív webdizájnok, amelyek erősítik a márkádat, bizalmat építenek, és profivá teszik az online megjelenésed..",
-    "features": [
-      "Egyedi megjelenés",
-      "Reszponzív layout",
-      "Komponens alapú UI",
-      "Felhasználóbarát tervezés",
-      "Figma alapú tervek"
-    ]
-  },
-  {
-    "id": 2,
-    "title": "Weboldalfejlesztés",
-    "description": "Gyors, reszponzív és jól felépített weboldalak, amelyek a növekedésre vannak tervezve, és stabil alapot adnak a vállalkozásodnak.",
-    "features": [
-      "Gyors és stabil Next.js alap",
-      "SEO barát",
-      "Tartalomkezelő rendszer",
-      "Marketing eszközök bekötése",
-      "Bővíthető struktúra"
-    ]
-  },
-  {
-    "id": 3,
-    "title": "Webalkalmazás fejlesztés",
-    "description": "Modern webalkalmazások felhasználóbarát felülettel, okos folyamatlogikával, adatkezeléssel és később is bővíthető modulokkal.",
-    "features": [
-      "Egyedi adminfelület és tartalomkezelés",
-      "Időpontfoglalás",
-      "Külső API-k integrálása",
-      "Bővíthető modulok",
-      "Jelentkezési, űrlap és adatküldő rendszerek",
-      "Felhasználói folyamatok"
-    ]
-  },
-  {
-    "id": 4,
-    "title": "Weboldal Audit és Migráció",
-    "description": "Meglévő weboldalak szakmai átvilágítása, technikai modernizálása és biztonságos költöztetése új környezetbe, adatvesztés nélkül.",
-    "features": [
-      "Technikai és SEO állapotfelmérés",
-      "Adatbázis és tartalom költöztetése",
-      "Domain és tárhely konfiguráció",
-      "Sebességoptimalizálás",
-      "Biztonsági frissítések és mentések",
-      "Platformváltás támogatása"
-    ]
-  }
-]
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "Webdizján",
+      "description": "Stílusos, felhasználóbarát és reszponzív webdizájnok, amelyek erősítik a márkádat, bizalmat építenek, és profivá teszik az online megjelenésed..",
+      "features": [
+        "Egyedi megjelenés",
+        "Reszponzív layout",
+        "Komponens alapú UI",
+        "Felhasználóbarát tervezés",
+        "Figma alapú tervek"
+      ],
+      "bgColor": "bg-yellow-bg",
+      "color": "text-primary-text"
+    },
+    {
+      "id": 2,
+      "title": "Weboldalfejlesztés",
+      "description": "Gyors, reszponzív és jól felépített weboldalak, amelyek a növekedésre vannak tervezve, és stabil alapot adnak a vállalkozásodnak.",
+      "features": [
+        "Gyors és stabil Next.js alap",
+        "SEO barát",
+        "Tartalomkezelő rendszer",
+        "Marketing eszközök bekötése",
+        "Bővíthető struktúra"
+      ],
+      "bgColor": "bg-rose-bg",
+      "color": "text-primary-text"
+    },
+    {
+      "id": 3,
+      "title": "Webalkalmazás fejlesztés",
+      "description": "Modern webalkalmazások felhasználóbarát felülettel, okos folyamatlogikával, adatkezeléssel és később is bővíthető modulokkal.",
+      "features": [
+        "Egyedi adminfelület és tartalomkezelés",
+        "Időpontfoglalás",
+        "Külső API-k integrálása",
+        "Bővíthető modulok",
+        "Jelentkezési, űrlap és adatküldő rendszerek",
+        "Felhasználói folyamatok"
+      ],
+      "bgColor": "bg-sage-bg-light",
+      "color": "text-primary-text"
+    },
+    {
+      "id": 4,
+      "title": "Weboldal Audit és Migráció",
+      "description": "Meglévő weboldalak szakmai átvilágítása, technikai modernizálása és biztonságos költöztetése új környezetbe, adatvesztés nélkül.",
+      "features": [
+        "Technikai és SEO állapotfelmérés",
+        "Adatbázis és tartalom költöztetése",
+        "Domain és tárhely konfiguráció",
+        "Sebességoptimalizálás",
+        "Biztonsági frissítések és mentések",
+        "Platformváltás támogatása"
+      ],
+      "bgColor": "bg-sage-bg-dark",
+      "color": "text-secondary-text"
+    }
+  ],
+  "data": [
+    {
+      "id": "01",
+      "title": "Kutatás",
+      "description": "Célok, felhasználói utak, versenytársak és szükséges funkciók részletes feltérképezése. Megértem, kinek készül az oldal, hogyan használják majd, és milyen megoldásokra van ténylegesen szükség. Ez adja a projekt biztos alapját."
+    },
+    {
+      "id": "02",
+      "title": "Tervezés",
+      "description": "A weboldal felépítését, oldalstruktúráját és működési logikáját közösen kialakítjuk. Egyszerűen átláthatóvá teszem, hogyan fog kinézni és működni az egész rendszer."
+    },
+    {
+      "id": "03",
+      "title": "Dizájn",
+      "description": "Wireframe-ek, vizuális hierarchia és modern, reszponzív megjelenés kialakítása.Olyan felépítést és dizájnt készítek, ami könnyen érthető, letisztult, és minden eszközön jól használható."
+    },
+    {
+      "id": "04",
+      "title": "Fejlesztés",
+      "description": "Next.js alapú fejlesztés, API-integrációk, headless CMS, SEO és teljesítményoptimalizálás. Gyors, tiszta és modern technológiákkal építem meg az oldalt, odafigyelve a sebességre, mobilélményre és a technikai SEO-ra is.."
+    },
+    {
+      "id": "05",
+      "title": "Átadás",
+      "description": "Tesztelés, végső simítások, deploy, dokumentáció és támogatás. Biztosítom, hogy minden hibátlanul működjön, és mindent úgy adok át, hogy az oldal könnyen kezelhető és gond nélkül üzemeltethető legyen."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+---
+const workflowSteps = [
+  {
+    id: '01',
+    title: 'Kutatás',
+    description:
+      'Célok, felhasználói utak, versenytársak és szükséges funkciók részletes feltérképezése. Megértem, kinek készül az oldal, hogyan használják majd, és milyen megoldásokra van ténylegesen szükség. Ez adja a projekt biztos alapját.',
+  },
+  {
+    id: '02',
+    title: 'Tervezés',
+    description:
+      'A weboldal felépítését, oldalstruktúráját és működési logikáját közösen kialakítjuk. Egyszerűen átláthatóvá teszem, hogyan fog kinézni és működni az egész rendszer.',
+  },
+  {
+    id: '03',
+    title: 'Dizájn',
+    description:
+      'Wireframe-ek, vizuális hierarchia és modern, reszponzív megjelenés kialakítása.Olyan felépítést és dizájnt készítek, ami könnyen érthető, letisztult, és minden eszközön jól használható.',
+  },
+  {
+    id: '04',
+    title: 'Fejlesztés',
+    description:
+      'Next.js alapú fejlesztés, API-integrációk, headless CMS, SEO és teljesítményoptimalizálás. Gyors, tiszta és modern technológiákkal építem meg az oldalt, odafigyelve a sebességre, mobilélményre és a technikai SEO-ra is..',
+  },
+  {
+    id: '05',
+    title: 'Átadás',
+    description:
+      'Tesztelés, végső simítások, deploy, dokumentáció és támogatás. Biztosítom, hogy minden hibátlanul működjön, és mindent úgy adok át, hogy az oldal könnyen kezelhető és gond nélkül üzemeltethető legyen.',
+  },
+];
+---
+
+<div class="w-full px-16 py-24">
+  {
+    workflowSteps.map((step) => (
+      <div class="w-xs   mb-48">
+        <p class="font-family-space text-9xl">{step.id}</p>
+        <h1 class=" font-light mb-16 text-4xl">{step.title}</h1>
+        <p class="text-lg leading-relaxed">{step.description}</p>
+      </div>
+    ))
+  }
+</div>

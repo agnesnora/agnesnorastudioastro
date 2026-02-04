@@ -1,0 +1,81 @@
+---
+const accentMap = {
+  sage: 'text-sage-bg-light',
+  rose: 'text-rose-bg',
+  yellow: 'text-yellow-bg',
+} as const;
+
+const {
+  accent,
+  accentClass: accentClassProp,
+  title,
+  description,
+  price,
+  features,
+} = Astro.props;
+
+const accentClass =
+  accentClassProp ??
+  accentMap[accent as keyof typeof accentMap] ??
+  accentMap.sage;
+
+const maskId = `mask-${String(title).trim().toLowerCase().replace(/\s+/g, '-')}`;
+---
+
+<div class="relative flex flex-col h-full w-full min-h-[600px] group">
+  <div class="absolute inset-0 z-0">
+    <svg
+      viewBox="0 0 370 921"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class={`w-full h-full drop-shadow-sm transition-colors duration-300 ${accentClass}`}
+      preserveAspectRatio="none"
+    >
+      <mask id={maskId} fill="white">
+        <path d="M0 0H213L223.5 39.4893H370V921H0V0Z"></path>
+      </mask>
+      <path
+        d="M0 0V-10H-10V0H0ZM213 0L222.664 -2.56966L220.689 -10H213V0ZM223.5 39.4893L213.836 42.0589L215.811 49.4893H223.5V39.4893ZM370 39.4893H380V29.4893H370V39.4893ZM370 921V931H380V921H370ZM0 921H-10V931H0V921ZM0 0V10H213V0V-10H0V0ZM213 0L203.336 2.56966L213.836 42.0589L223.5 39.4893L233.164 36.9196L222.664 -2.56966L213 0ZM223.5 39.4893V49.4893H370V39.4893V29.4893H223.5V39.4893ZM370 39.4893H360V921H370H380V39.4893H370ZM370 921V911H0V921V931H370V921ZM0 921H10V0H0H-10V921H0Z"
+        fill="currentColor"
+        mask={`url(#${maskId})`}></path>
+    </svg>
+  </div>
+
+  <div class="relative z-10 p-8 pt-16 flex flex-col h-full">
+    <h2 class="text-2xl font-bold uppercase tracking-wider">{title}</h2>
+    <p class="text-sm opacity-80 mt-2 min-h-[3rem]">{description}</p>
+
+    <div class="my-6">
+      <span class="text-3xl font-black">{price}</span>
+    </div>
+
+    <ul class="flex-grow space-y-3 mb-8">
+      {
+        features.map((item: string) => (
+          <li class="flex items-start gap-2 text-sm">
+            <svg
+              class="w-5 h-5 flex-shrink-0 mt-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+            <span>{item}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <button
+      class="w-full py-3 px-6 bg-black text-white font-bold rounded hover:bg-opacity-80 transition-all"
+    >
+      Érdekel
+    </button>
+  </div>
+</div>

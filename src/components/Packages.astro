@@ -1,0 +1,69 @@
+---
+import PackageCard from './PackageCard.astro';
+const packages = [
+  {
+    title: 'Start',
+    description: 'Személyes weboldal vagy Landing page csomag',
+    price: '99.000 Ft-tól',
+    features: [
+      'Egyedi basic design',
+      'Gyors weboldal',
+      'Reszponzív, mobilbarát',
+      'Tartalomfeltöltés',
+      'Alap SEO beállítás',
+      'Képoptimalizálás',
+      'Google Search Console',
+      'Kapcsolati űrlap',
+      'Cloud hosting',
+      'Domain',
+    ],
+    accent: 'sage',
+  },
+  {
+    title: 'Business',
+    description: 'Személyes weboldal vagy Landing page csomag',
+    price: '99.000 Ft-tól',
+    features: [
+      'Minden a Start csomagból',
+      'Egyedi weboldal (4-6 oldal)',
+      'Google Analytics bekötése',
+      'Alap + Haladó SEO',
+      'Blog funkció',
+      'Email beállítás',
+      'Foglalási rendszer',
+    ],
+    accent: 'rose',
+  },
+  {
+    title: 'Premium',
+    description: 'Személyes weboldal vagy Landing page csomag',
+    price: '99.000 Ft-tól',
+    features: [
+      'Egyedi weboldal/webapp',
+      'Minden a Business csomagból',
+      'Egyedi admin felület',
+      'Külső API integrációk',
+      'Jelentkezési lapok',
+      'Űrlaprendszerek',
+      'Tovább bővíthető modulok',
+    ],
+    accent: 'yellow',
+  },
+];
+---
+
+<section class="max-w-7xl mx-auto px-4 py-20">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+    {
+      packages.map((pkg) => (
+        <PackageCard
+          title={pkg.title}
+          description={pkg.description}
+          price={pkg.price}
+          features={pkg.features}
+          accent={pkg.accent}
+        />
+      ))
+    }
+  </div>
+</section>

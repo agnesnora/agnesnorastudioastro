@@ -40,6 +40,15 @@
   .bg-sage-bg-dark {
     background-color: var(--color-sage-bg-dark);
   }
+  .text-yellow-bg {
+    color: var(--color-yellow-bg);
+  }
+  .text-rose-bg {
+    color: var(--color-rose-bg);
+  }
+  .text-sage-bg-light {
+    color: var(--color-sage-bg-light);
+  }
   .text-primary-text {
     color: var(--color-primary-text);
   }

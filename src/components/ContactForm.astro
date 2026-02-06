@@ -2,10 +2,28 @@
   Indítsuk el a projekted
 </h1>
 <form
-  action="https://formspree.io/f/xeeljwzl"
+  action="https://api.web3forms.com/submit"
   method="POST"
   class="w-4/5 lg:w-1/2 mx-auto text-center flex flex-col items-center"
 >
+  <!-- Web3Forms Access Key - cseréld ki a sajátodra! -->
+  <input
+    type="hidden"
+    name="access_key"
+    value="6ca95b49-b2f7-4905-b105-47401937c473"
+  />
+
+  <!-- Redirect after submit -->
+  <input type="hidden" name="redirect" value="https://agnesnorastudio.hu" />
+
+  <!-- Honeypot Spam Protection -->
+  <input
+    type="checkbox"
+    name="botcheck"
+    class="hidden"
+    style="display: none;"
+  />
+
   <input
     name="name"
     type="text"

@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <div class="min-h-screen flex items-center justify-center bg-primary-bg">
+    <div class="text-center">
+      <h1 class="text-4xl font-poppins font-black text-primary-text mb-4">
+        Köszönöm az üzeneted! 🎉
+      </h1>
+      <p class="text-lg text-primary-text mb-8">
+        Hamarosan válaszolok az emailedre.
+      </p>
+      <p class="text-sm text-primary-text opacity-60">
+        3 másodperc múlva visszairányítunk a főoldalra...
+      </p>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Auto redirect after 3 seconds
+  setTimeout(() => {
+    window.location.href = '/';
+  }, 3000);
+</script>

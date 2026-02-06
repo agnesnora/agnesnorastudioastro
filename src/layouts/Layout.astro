@@ -12,15 +12,13 @@ import '../styles/global.css';
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
-    
-    <!-- reCAPTCHA magyar nyelv -->
-    <script src="https://www.google.com/recaptcha/api.js?hl=hu" async defer></script>
   </head>
   <body>
     <Header />
     <slot />
-    
+
     <!-- Web3Forms script -->
+    <script src="https://js.hcaptcha.com/1/api.js?hl=hu" async defer></script>
     <script src="https://web3forms.com/client/script.js" async defer></script>
   </body>
 </html>

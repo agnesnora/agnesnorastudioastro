@@ -1,0 +1,41 @@
+<h1 class="uppercase text-3xl text-center font-family-poppins font-black m-8">
+  Indítsuk el a projekted
+</h1>
+<form
+  method="POST"
+  class="w-4/5 lg:w-1/2 mx-auto text-center flex flex-col items-center"
+>
+  <input
+    name="name"
+    type="text"
+    placeholder="Név"
+    required
+    class="w-full border-0 border-b border-primary-text bg-transparent
+         py-4 outline-none focus:border-button-primary"
+  />
+
+  <input
+    name="email"
+    type="email"
+    placeholder="Email"
+    class="w-full border-0 border-b border-primary-text bg-transparent
+         py-4 outline-none focus:border-button-primary"
+    required
+  />
+
+  <textarea
+    name="message"
+    class="w-full border-0 border-b border-primary-text bg-transparent
+         py-4 outline-none resize-none focus:border-button-primary"
+    placeholder="Írj nekem a projektedről"
+    rows="5"
+    required
+    minlength="10"></textarea>
+
+  <button
+    type="submit"
+    class="w-full my-12 text-primary-text bg-button-primary hover:bg-button-hover font-bold py-4 rounded-2xl tracking-wide"
+  >
+    Üzenet elküldése
+  </button>
+</form>

@@ -1,0 +1,19 @@
+---
+const { imageSrc, alt, title, techStack } = Astro.props;
+---
+
+<div>
+  <div class="overflow-hidden rounded-3xl shadow-xl">
+    <img
+      src={imageSrc}
+      alt={alt}
+      class="w-full h-auto rounded-3xl object-cover"
+      loading="lazy"
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+    />
+  </div>
+  <div class="flex flex-wrap gap-2 mt-4 text-sm text-primary-text">
+    {techStack.map((tech: string) => <span>{tech}</span>)}
+  </div>
+  <h1>{title}</h1>
+</div>

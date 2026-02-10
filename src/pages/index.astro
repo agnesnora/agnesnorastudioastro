@@ -8,14 +8,15 @@ import ArrowScrollDown from '../components/ArrowScrollDown.astro';
 import Packages from '../components/Packages.astro';
 import ContactForm from '../components/ContactForm.astro';
 import ProjectList from '../components/ProjectList.astro';
-import IconCard from '../components/IconCard.astro';
+import Action from '../components/Action.astro';
+import WhyMe from '../components/WhyMe.astro';
 ---
 
 <div class="w-full bg-primary-bg">
   <Layout>
     <div>
       <Hero />
-      <IconCard />
+      <WhyMe />
       <Services />
       <ArrowScrollDown title="Hogyan dolgozom?" />
       <Workflow />
@@ -24,6 +25,7 @@ import IconCard from '../components/IconCard.astro';
         csomagokban.
       </p>
       <Packages />
+      <Action />
       <ArrowScrollDown title="Legutóbbi munkáim" />
       <ProjectList />
       <ContactForm />

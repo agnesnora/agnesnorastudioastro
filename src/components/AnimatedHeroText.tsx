@@ -27,10 +27,7 @@ const AnimatedHeroText = ({
   const words = text.split(' ');
 
   return (
-    <h1
-      ref={container}
-      // className="py-20 px-2 text-right  font-family-jakarta text-4xl leading-16 lg:text-left lg:text-6xl lg:font-bold"
-    >
+    <h1 ref={container} className="font-family-poppins">
       {words.map((word, i) => {
         const start = i / words.length;
         const end = start + 1 / words.length;

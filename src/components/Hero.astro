@@ -33,15 +33,8 @@ import AnimatedHeroText from './AnimatedHeroText.tsx';
     </div>
   </section>
   <section
-    class="bg-primary-bg
-    text-primary-text
-    font-black
-    text-left text-4xl
-    py-20 px-2 leading-16
-    lg:px-48
-   
-      lg:text-6xl"
+    class="relative bg-primary-bg text-primary-text font-black text-left text-4xl py-20 px-2 leading-16 lg:px-48 lg:text-6xl min-h-[150vh]"
   >
-    <AnimatedHeroText client:visible />
+    <AnimatedHeroText client:load />
   </section>
 </div>

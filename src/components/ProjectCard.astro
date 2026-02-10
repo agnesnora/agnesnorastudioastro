@@ -1,8 +1,16 @@
 ---
-const { imageSrc, alt, title, techStack } = Astro.props;
+interface Props {
+  imageSrc: string;
+  alt: string;
+  title: string;
+  techStack: string[];
+  projectId: string;
+}
+
+const { imageSrc, alt, title, techStack, projectId } = Astro.props as Props;
 ---
 
-<div>
+<a href={`/projektek/${projectId}`} class="block hover:opacity-90 transition">
   <div class="overflow-hidden rounded-3xl shadow-xl">
     <img
       src={imageSrc}
@@ -15,5 +23,5 @@ const { imageSrc, alt, title, techStack } = Astro.props;
   <div class="flex flex-wrap gap-2 mt-4 text-sm text-primary-text">
     {techStack.map((tech: string) => <span>{tech}</span>)}
   </div>
-  <h1>{title}</h1>
-</div>
+  <h1 class="text-xl font-bold mt-2">{title}</h1>
+</a>

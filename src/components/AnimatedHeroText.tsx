@@ -1,46 +1,65 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import type { MotionValue } from 'framer-motion';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 
 interface WordProps {
   children: string;
-  progress: MotionValue<number>;
+  progress: number;
   range: [number, number];
 }
 
 interface CharProps {
   children: string;
-  progress: MotionValue<number>;
+  progress: number;
   range: [number, number];
 }
 
 const AnimatedHeroText = ({
   text = 'Reszponzív, gyors és átgondolt digitális élményeket készítek, amelyek valódi értéket adnak az online jelenlétedhez.',
 }) => {
-  const container = useRef(null);
+  const container = useRef<HTMLParagraphElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const rafRef = useRef<number>(0);
 
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start 0.9', 'start 0.25'],
-  });
+  const tick = useCallback(() => {
+    if (container.current) {
+      const rect = container.current.getBoundingClientRect();
+      const wh = window.innerHeight;
+
+      // 0 = elem teteje a viewport alján; 1 = elem teteje a viewport tetejénél
+      // Minél nagyobb a különbség start-end között, annál lassabb az animáció
+      const start = wh * 0.9;
+      const end = wh * 0.05;
+      const progress = Math.max(
+        0,
+        Math.min(1, (start - rect.top) / (start - end))
+      );
+
+      setScrollProgress(progress);
+    }
+    rafRef.current = requestAnimationFrame(tick);
+  }, []);
+
+  useEffect(() => {
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [tick]);
 
   const words = text.split(' ');
 
   return (
-    <h1 ref={container} className="font-family-poppins">
+    <p ref={container} className="relative">
       {words.map((word, i) => {
         const start = i / words.length;
         const end = start + 1 / words.length;
         return (
-          <>
-            <Word key={i} progress={scrollYProgress} range={[start, end]}>
+          <React.Fragment key={`word-${i}`}>
+            <Word progress={scrollProgress} range={[start, end]}>
               {word}
             </Word>
             {i < words.length - 1 && ' '}
-          </>
+          </React.Fragment>
         );
       })}
-    </h1>
+    </p>
   );
 };
 
@@ -64,14 +83,17 @@ const Word: React.FC<WordProps> = ({ children, progress, range }) => {
 };
 
 const Char: React.FC<CharProps> = ({ children, progress, range }) => {
-  const opacity = useTransform(progress, range, [0, 1]);
+  const opacity = Math.max(
+    0,
+    Math.min(1, (progress - range[0]) / (range[1] - range[0]))
+  );
 
   return (
     <span className="relative inline-block">
       <span className="opacity-20">{children}</span>
-      <motion.span style={{ opacity: opacity }} className="absolute left-0">
+      <span style={{ opacity }} className="absolute left-0">
         {children}
-      </motion.span>
+      </span>
     </span>
   );
 };

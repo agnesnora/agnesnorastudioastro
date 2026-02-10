@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { projects } from '../../data/projects';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout>
+  <a
+    href="/projektek"
+    class="text-primary-text hover:underline mb-8 inline-block"
+  >
+    ← Vissza a projektekhez
+  </a>
+  <div class="w-full">
+    <h1 class="text-4xl font-space font-bold text-primary-text mb-4">
+      {project.name}
+    </h1>
+  </div>
+  <img
+    src={project.imageSrc}
+    alt={project.alt}
+    class="w-full rounded-3xl mb-8"
+  />
+
+  <!-- <div class="flex gap-2 mb-8">
+      {
+        project.techStack.map((tech) => (
+          <span class="bg-sage-bg-light text-primary-text text-sm px-3 py-1 rounded-full">
+            {tech}
+          </span>
+        ))
+      }
+    </div> -->
+  <div class="mt-12 bg-primary-bg text-secondary-bg">
+    <h2 class="text-sm uppercase">Szolgáltatások</h2>
+    <ul>
+      {project.services?.map((tech) => <li>{tech}</li>)}
+    </ul>
+  </div>
+
+  <div class="prose prose-lg max-w-none">
+    <p class="text-primary-text leading-relaxed">
+      {project.description}
+    </p>
+  </div>
+</Layout>

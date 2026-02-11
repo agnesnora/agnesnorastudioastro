@@ -1,0 +1,69 @@
+---
+import FAQItem from './FAQItem.astro';
+const faqs = [
+  {
+    question: 'Milyen technológiákkal és eszközökkel dolgozol?',
+    answer:
+      'Igénytől függően, a projekthez legjobban illeszkedő, költséghatékony technológiát választom. Tech stack: React, Next.js, Astro, Tailwind, SCSS. Eszközök: Sanity, Mailerlite, Make, Resend.',
+  },
+  {
+    question: 'Mennyi idő alatt készül el a projekt?',
+    answer:
+      'Ez a projekttől függ. Egy egyszerű landingpage tervezéssel együtt kb. 1 hét alatt készül el.',
+  },
+  {
+    question: 'Kell-e tervezés, ha van már terv?',
+    answer:
+      'Ha van meglévő terv, az nagyban lerövidíti a folyamatot, de ha nincs, természetesen vállalom a tervezést is.',
+  },
+  {
+    question: 'Szükségem van designra és fejlesztésre is, mindkettőt vállalod?',
+    answer:
+      'Igen! Designban és fejlesztésben is tudok segíteni, a projektet teljesen megvalósítjuk a kódolás és a design szempontjából. Fontos azonban, hogy komplett brandinget nem vállalok – logót, arculatot, vagy teljes vizuális identitást csak a meglévő elemekre építve dolgozom fel.',
+  },
+
+  {
+    question: 'Elfogadsz részletfizetést?',
+    answer:
+      'Igen! A weboldal befektetés, és lehetőség van részletfizetésre, hogy kényelmesen tudj fizetni.',
+  },
+  {
+    question: 'Mennyibe kerül egy projekt?',
+    answer:
+      'Az ár a projekt igényeitől függ. Alap csomagom kb. 600$-tól indul, de mindig az ügyfél igényeihez igazítom a költségeket.',
+  },
+];
+---
+
+<div class="w-4/5 bg-white mx-auto p-8 my-16 rounded-3xl shadow-sm">
+  <section class="mx-auto max-w-4/5 px-4 py-12" data-faq>
+    <h2
+      class="text-8xl font-light tracking-tight text-primary-text font-family-space text-center"
+    >
+      GYIK
+    </h2>
+
+    <div class="w-full mt-6 divide-y divide-secondary-bg rounded-2xl bg-white">
+      {
+        faqs.map((faq) => (
+          <FAQItem question={faq.question} answer={faq.answer} />
+        ))
+      }
+    </div>
+  </section>
+</div>
+
+<script>
+  document.querySelectorAll('[data-faq]').forEach((faq) => {
+    const items = faq.querySelectorAll('details');
+
+    items.forEach((item) => {
+      item.addEventListener('toggle', () => {
+        if (!item.open) return;
+        items.forEach((other) => {
+          if (other !== item) other.open = false;
+        });
+      });
+    });
+  });
+</script>

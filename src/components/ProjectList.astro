@@ -3,7 +3,7 @@ import { projects } from '../data/projects.ts';
 import ProjectCard from '../components/ProjectCard.astro';
 ---
 
-<div class="w-4/5 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div id={Astro.props.id} class="w-4/5 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
   {projects.map((project) => (
     <ProjectCard
       imageSrc={project.imageSrc}

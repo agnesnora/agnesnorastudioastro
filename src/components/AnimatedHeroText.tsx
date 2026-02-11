@@ -24,10 +24,10 @@ const AnimatedHeroText = ({
       const rect = container.current.getBoundingClientRect();
       const wh = window.innerHeight;
 
-      // 0 = elem teteje a viewport alján; 1 = elem teteje a viewport tetejénél
-      // Minél nagyobb a különbség start-end között, annál lassabb az animáció
+      // 0 = elem teteje a viewport alján; 1 = mielőtt a navbar alá menne
+      // end = 0.25 → az animáció befejeződik, mielőtt a szöveg felér a navbarhoz
       const start = wh * 0.9;
-      const end = wh * 0.05;
+      const end = wh * 0.25;
       const progress = Math.max(
         0,
         Math.min(1, (start - rect.top) / (start - end))

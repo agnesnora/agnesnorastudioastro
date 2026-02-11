@@ -18,7 +18,7 @@ import WhyMe from '../components/WhyMe.astro';
       <Hero />
       <WhyMe />
       <Services />
-      <ArrowScrollDown title="Hogyan dolgozom?" />
+
       <Workflow />
       <p>
         Profi weboldalak és webalkalmazások minden vállalkozásnak rugalmas
@@ -26,8 +26,13 @@ import WhyMe from '../components/WhyMe.astro';
       </p>
       <Packages />
       <Action />
-      <ArrowScrollDown title="Legutóbbi munkáim" />
-      <ProjectList />
+      <section id="legutobbi-munkaim">
+        <ArrowScrollDown title="Legutóbbi munkáim" />
+      </section>
+      <ProjectList id="projektek" />
+      <section id="kapcsolat">
+        <ArrowScrollDown title="Lépj kapcsolatba velem!" />
+      </section>
       <ContactForm />
     </div>
   </Layout>

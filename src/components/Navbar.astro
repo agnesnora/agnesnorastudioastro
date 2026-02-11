@@ -2,20 +2,17 @@
 const links = [
   { href: '/', label: 'Főoldal' },
   { href: '/rolam', label: 'Rólam' },
-  { href: '/projektek', label: 'Projektek' },
-  { href: '/kapcsolat', label: 'Kapcsolat' },
+  { href: '/#legutobbi-munkaim', label: 'Projektek' },
+  { href: '/#kapcsolat', label: 'Kapcsolat' },
 ];
 ---
 
 <header
-  class="sticky top-0 z-50 bg-primary-bg/90 backdrop-blur-sm border-b border-primary-text/10"
+  class="w-7xl p-2 mx-auto sticky top-6 z-50 bg-dark-bg/80 rounded-4xl text-secondary-text"
 >
   <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
     <!-- Logo -->
-    <a
-      href="/"
-      class="font-family-space font-regular text-xl text-primary-text"
-    >
+    <a href="/" class="font-family-space font-regular text-xl">
       AGNESNORA <br />
       STUDIO
     </a>
@@ -24,10 +21,7 @@ const links = [
     <nav class="hidden items-center gap-6 md:flex">
       {
         links.map((l) => (
-          <a
-            href={l.href}
-            class="text-sm text-zinc-700 hover:text-zinc-900 transition"
-          >
+          <a href={l.href} class="text-sm hover:text-zinc-900 transition">
             {l.label}
           </a>
         ))

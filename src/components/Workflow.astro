@@ -1,4 +1,6 @@
 ---
+import ArrowScrollDown from './ArrowScrollDown.astro';
+
 const workflowSteps = [
   {
     id: '01',
@@ -33,14 +35,19 @@ const workflowSteps = [
 ];
 ---
 
-<div class="w-full px-16 py-24">
-  {
-    workflowSteps.map((step) => (
-      <div class="w-xs   mb-48">
-        <p class="font-family-space text-9xl">{step.id}</p>
-        <h1 class=" font-light mb-16 text-4xl">{step.title}</h1>
-        <p class="text-lg leading-relaxed">{step.description}</p>
-      </div>
-    ))
-  }
+<div class="w-full bg-white">
+  <ArrowScrollDown title="Hogyan dolgozom?" />
+  <div
+    class="w-5/6 px-16 py-24 mt-16 mx-auto bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 rounded-2xl"
+  >
+    {
+      workflowSteps.map((step) => (
+        <div class=" mb-8  lg:mb-16 ">
+          <p class="font-family-space text-9xl">{step.id}</p>
+          <h1 class=" font-light mb-16 text-4xl">{step.title}</h1>
+          <p class="text-lg leading-relaxed">{step.description}</p>
+        </div>
+      ))
+    }
+  </div>
 </div>

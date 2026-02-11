@@ -13,21 +13,17 @@ const { project } = Astro.props;
 ---
 
 <Layout>
-  <a
-    href="/projektek"
-    class="text-primary-text hover:underline mb-8 inline-block"
-  >
-    ← Vissza a projektekhez
-  </a>
-  <div class="w-full">
-    <h1 class="text-4xl font-space font-bold text-primary-text mb-4">
+  <div class="w-full flex flex-col items-start pl-8 my-24">
+    <h1
+      class="text-3xl font-family-space text-left font-bold text-dark-bg mb-4"
+    >
       {project.name}
-    </h1>
+    </h1><p>{project.year}</p>
   </div>
   <img
     src={project.imageSrc}
     alt={project.alt}
-    class="w-full rounded-3xl mb-8"
+    class="w-full mx-auto mb-8 xl:w-4xl"
   />
 
   <!-- <div class="flex gap-2 mb-8">

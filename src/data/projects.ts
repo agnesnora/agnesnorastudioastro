@@ -5,12 +5,13 @@ export type Project = {
   imageSrc: string;
   techStack: string[];
   services?: string[];
+  year: number;
 };
 
 export const projects = [
   {
     id: '1',
-    name: 'Ciklusharmónia Weboldal',
+    name: 'Ciklusharmónia',
     description:
       'Egy teljes weboldalt készítettem egy menstruációs ciklussal foglalkozó mentor számára (FEMM/BOM), egyedi dizájnnal és könnyen kezelhető blogfelülettel, Sanity alapú tartalomkezeléssel. Fontos szempont volt a költséghatékonyság, ezért olyan eszközöket választottam, mint a MailerLite, Resend, egy alacsony költségű időpontfoglaló rendszer, valamint Make-alapú automatizmusok, amelyek leegyszerűsítik a napi munkát.',
     imageSrc: '/CiklusSquareMain.webp',
@@ -33,6 +34,7 @@ export const projects = [
       'SEO optimalizáció',
     ],
     alt: '',
+    year: 2025,
   },
   {
     id: '2',
@@ -50,6 +52,7 @@ export const projects = [
       'Light/Dark mód',
     ],
     alt: '',
+    year: 2025,
   },
   {
     id: '3',
@@ -59,6 +62,15 @@ export const projects = [
     imageSrc: '/BeecoMainSquare.webp',
     techStack: ['TypeScript', 'React', 'SCSS', 'Fixed-width'],
     alt: '',
+    services: [
+      'Webdizájn',
+      'Admin dashboard',
+      'Tartalomkezelés',
+      'Unit tesztek',
+      'i18n internalizáció',
+      'Light/Dark mód',
+    ],
+    year: 2025,
   },
   {
     id: '4',
@@ -68,6 +80,7 @@ export const projects = [
     imageSrc: '/portfolioMainSquare.webp',
     techStack: ['React', 'Tailwind', 'Responsive'],
     alt: '',
+    year: 2024,
   },
 
   {
@@ -78,5 +91,6 @@ export const projects = [
     imageSrc: '/DevjobsMainSquare.webp',
     techStack: ['TypeScript', 'React', 'SCSS', 'Responsive'],
     alt: '',
+    year: 2024,
   },
 ];

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { projects } from '../../data/projects';
+import ImageGallery from '../../components/ImageGallery.astro';
 
 export function getStaticPaths() {
   return projects.map((project) => ({
@@ -10,21 +11,39 @@ export function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+const galleryImages = (project.images.gallery ?? []).map((imgObj) => ({
+  src: imgObj.img,
+  alt: imgObj.alt ?? project.alt ?? project.name,
+}));
 ---
 
 <Layout>
-  <div class="w-full flex flex-col items-start pl-8 my-24">
+  <div
+    class="w-full flex flex-col items-start lg:items-center pl-8 my-12 lg:mt-32 lg:mb-24"
+  >
     <h1
-      class="text-3xl font-family-space text-left font-bold text-dark-bg mb-4"
+      class="text-3xl lg:text-5xl xl:text-6xl font-family-space text-left lg:text-center font-bold text-dark-bg mb-4"
     >
       {project.name}
     </h1><p>{project.year}</p>
   </div>
-  <img
-    src={project.imageSrc}
-    alt={project.alt}
-    class="w-full mx-auto mb-8 xl:w-4xl"
-  />
+
+  <div class="relative w-full mx-auto overflow-hidden">
+    <div class="absolute inset-0 bg-linear-to-bl from-teal-50 to-neutral-100">
+    </div>
+    <div
+      class="absolute inset-0 blur-2xl opacity-40 bg-linear-to-tr from-white/30 to-transparent"
+    >
+    </div>
+
+    <div class="relative z-10 p-6 md:p-10">
+      <img
+        src={project.images.banner}
+        alt={project.alt}
+        class="mx-auto w-full max-w-5xl h-auto object-contain"
+      />
+    </div>
+  </div>
 
   <!-- <div class="flex gap-2 mb-8">
       {
@@ -47,4 +66,5 @@ const { project } = Astro.props;
       {project.description}
     </p>
   </div>
+  <ImageGallery images={galleryImages} />
 </Layout>

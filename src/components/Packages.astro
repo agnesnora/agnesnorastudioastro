@@ -53,11 +53,13 @@ const packages = [
 ];
 ---
 
-<section class="max-w-7xl mx-auto px-4 py-20">
+<section id="arak" class="max-w-7xl mx-auto px-4 py-20">
   <ArrowScrollDown
     title="Profi weboldalak és webalkalmazások minden vállalkozásnak rugalmas csomagokban"
   />
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+  <div
+    class="grid grid-cols-1 gap-8 items-stretch max-w-md mx-auto lg:max-w-none lg:grid-cols-3"
+  >
     {
       packages.map((pkg) => (
         <PackageCard

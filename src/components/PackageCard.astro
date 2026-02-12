@@ -26,11 +26,12 @@ const maskId = `mask-${String(title).trim().toLowerCase().replace(/\s+/g, '-')}`
   <div class="absolute inset-0 z-0">
     <svg
       viewBox="0 0 370 921"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class={`w-full h-full  transition-colors duration-300 ${accentClass}`}
+      class={`w-full h-full transition-colors duration-300 ${accentClass}`}
       preserveAspectRatio="none"
     >
+      <path d="M0 0H213L223.5 39.4893H370V921H0V0Z" fill="white"></path>
+
       <mask id={maskId} fill="white">
         <path d="M0 0H213L223.5 39.4893H370V921H0V0Z"></path>
       </mask>

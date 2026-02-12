@@ -55,49 +55,51 @@ const galleryImages = (project.images.gallery ?? []).map((imgObj) => ({
         ))
       }
     </div> -->
-    <div class="w-5/6 p-4 mt-12">
-      <h2
-        class="text-sm text-dark-bg font-family-space font-bold uppercase mb-4"
-      >
-        Szolgáltatások
-      </h2>
-      <ul class="text-primary-text grid-cols-2 gap-6">
-        {
-          project.services?.map((tech) => (
-            <li class="py-2 px-4 rounded-xl mr-2 my-2 border border-sage-bg-light border-dashed inline-block">
-              {tech}
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+    <div class="w-full mx-auto lg:w-4xl xl:w-7xl">
+      <div class="w-5/6 lg:max-w-5xl p-4 my-12">
+        <h2
+          class="text-sm text-dark-bg font-family-space font-bold uppercase mb-4"
+        >
+          Szolgáltatások
+        </h2>
+        <ul class="text-primary-text grid-cols-2 gap-6">
+          {
+            project.services?.map((tech) => (
+              <li class=" py-2 px-4 rounded-xl mr-2 my-2 bg-slate-100 text-sm font-medium inline-block">
+                {tech}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
 
-    <div class="w-full p-4 mt-12prose prose-lg max-w-none">
-      <h2
-        class="text-sm text-dark-bg font-family-space font-bold uppercase mb-4"
-      >
-        Projekt leírás
-      </h2>
-      <p class="text-primary-text leading-relaxed">
-        {project.description}
-      </p>
-    </div>
-    <ImageGallery images={galleryImages} />
-    <div class="w-5/6 p-4 mt-12">
-      <h2
-        class="text-sm text-dark-bg font-family-space font-bold uppercase my-4"
-      >
-        Technológia
-      </h2>
-      <ul class="text-primary-text grid-cols-3 gap-2">
-        {
-          project.techStack?.map((tech) => (
-            <li class="py-2 px-4 border-xl rounded-lg mr-2 my-2 text-secondary-text bg-dark-bg/90 border-dashed inline-block">
-              {tech}
-            </li>
-          ))
-        }
-      </ul>
+      <div class="w-full p-4 mt-12prose prose-lg max-w-none my-12">
+        <h2
+          class="text-sm text-dark-bg font-family-space font-bold uppercase mb-4"
+        >
+          Projekt leírás
+        </h2>
+        <p class="text-primary-text leading-relaxed">
+          {project.description}
+        </p>
+      </div>
+      <ImageGallery images={galleryImages} />
+      <div class="w-5/6 p-4 my-12">
+        <h2
+          class="text-sm text-dark-bg font-family-space font-bold uppercase my-4"
+        >
+          Technológia
+        </h2>
+        <ul class="text-primary-text grid-cols-3 gap-2">
+          {
+            project.techStack?.map((tech) => (
+              <li class="py-2 px-4 border-xl rounded-lg mr-2 my-2 text-secondary-text bg-dark-bg/90 border-dashed inline-block">
+                {tech}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
   </div>
 </Layout>

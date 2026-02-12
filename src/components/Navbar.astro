@@ -26,11 +26,7 @@ const links = [
     <nav class="hidden items-center gap-6 lg:flex">
       {
         links.map((l) => (
-          <a
-            href={l.href}
-            target="_blank"
-            class="text-sm hover:text-zinc-900 transition"
-          >
+          <a href={l.href} class="text-sm hover:text-zinc-900 transition">
             {l.label}
           </a>
         ))

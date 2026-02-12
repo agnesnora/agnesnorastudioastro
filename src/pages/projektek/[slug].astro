@@ -18,34 +18,35 @@ const galleryImages = (project.images.gallery ?? []).map((imgObj) => ({
 ---
 
 <Layout>
-  <div
-    class="w-full flex flex-col items-start lg:items-center pl-8 my-12 lg:mt-32 lg:mb-24"
-  >
-    <h1
-      class="text-3xl lg:text-5xl xl:text-6xl font-family-space text-left lg:text-center font-bold text-dark-bg mb-4"
-    >
-      {project.name}
-    </h1><p>{project.year}</p>
-  </div>
-
-  <div class="relative w-full mx-auto overflow-hidden">
-    <div class="absolute inset-0 bg-linear-to-bl from-teal-50 to-neutral-100">
-    </div>
+  <div class="mb-16">
     <div
-      class="absolute inset-0 blur-2xl opacity-40 bg-linear-to-tr from-white/30 to-transparent"
+      class="w-full flex flex-col items-start lg:items-center pl-8 my-12 lg:mt-32 lg:mb-24"
     >
+      <h1
+        class="text-3xl lg:text-5xl xl:text-6xl font-family-space text-left lg:text-center font-bold text-dark-bg mb-4"
+      >
+        {project.name}
+      </h1><p>{project.year}</p>
     </div>
 
-    <div class="relative z-10 p-6 md:p-10">
-      <img
-        src={project.images.banner}
-        alt={project.alt}
-        class="mx-auto w-full max-w-5xl h-auto object-contain"
-      />
-    </div>
-  </div>
+    <div class="relative w-full mx-auto overflow-hidden">
+      <div class="absolute inset-0 bg-linear-to-bl from-teal-50 to-neutral-100">
+      </div>
+      <div
+        class="absolute inset-0 blur-2xl opacity-40 bg-linear-to-tr from-white/30 to-transparent"
+      >
+      </div>
 
-  <!-- <div class="flex gap-2 mb-8">
+      <div class="relative z-10 p-6 md:p-10">
+        <img
+          src={project.images.banner}
+          alt={project.alt}
+          class="mx-auto w-full max-w-5xl h-auto object-contain"
+        />
+      </div>
+    </div>
+
+    <!-- <div class="flex gap-2 mb-8">
       {
         project.techStack.map((tech) => (
           <span class="bg-sage-bg-light text-primary-text text-sm px-3 py-1 rounded-full">
@@ -54,17 +55,49 @@ const galleryImages = (project.images.gallery ?? []).map((imgObj) => ({
         ))
       }
     </div> -->
-  <div class="mt-12 bg-primary-bg text-secondary-bg">
-    <h2 class="text-sm uppercase">Szolgáltatások</h2>
-    <ul>
-      {project.services?.map((tech) => <li>{tech}</li>)}
-    </ul>
-  </div>
+    <div class="w-5/6 p-4 mt-12">
+      <h2
+        class="text-sm text-dark-bg font-family-space font-bold uppercase mb-4"
+      >
+        Szolgáltatások
+      </h2>
+      <ul class="text-primary-text grid-cols-2 gap-6">
+        {
+          project.services?.map((tech) => (
+            <li class="py-2 px-4 rounded-xl mr-2 my-2 border border-sage-bg-light border-dashed inline-block">
+              {tech}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
 
-  <div class="prose prose-lg max-w-none">
-    <p class="text-primary-text leading-relaxed">
-      {project.description}
-    </p>
+    <div class="w-full p-4 mt-12prose prose-lg max-w-none">
+      <h2
+        class="text-sm text-dark-bg font-family-space font-bold uppercase mb-4"
+      >
+        Projekt leírás
+      </h2>
+      <p class="text-primary-text leading-relaxed">
+        {project.description}
+      </p>
+    </div>
+    <ImageGallery images={galleryImages} />
+    <div class="w-5/6 p-4 mt-12">
+      <h2
+        class="text-sm text-dark-bg font-family-space font-bold uppercase my-4"
+      >
+        Technológia
+      </h2>
+      <ul class="text-primary-text grid-cols-3 gap-2">
+        {
+          project.techStack?.map((tech) => (
+            <li class="py-2 px-4 border-xl rounded-lg mr-2 my-2 text-secondary-text bg-dark-bg/90 border-dashed inline-block">
+              {tech}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
-  <ImageGallery images={galleryImages} />
 </Layout>

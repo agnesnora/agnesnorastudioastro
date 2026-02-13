@@ -13,7 +13,7 @@ interface CharProps {
 }
 
 const AnimatedHeroText = ({
-  text = 'Reszponzív, gyors és átgondolt digitális élményeket készítek, amelyek valódi értéket adnak az online jelenlétedhez.',
+  text = 'Reszponzív, gyors és átgondolt digitális élményeket készítek,amik valódi értéket adnak az online jelenlétedhez.',
 }) => {
   const container = useRef<HTMLParagraphElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -89,9 +89,9 @@ const Char: React.FC<CharProps> = ({ children, progress, range }) => {
   );
 
   return (
-    <span className="relative inline-block">
+    <span className="relative inline-block lg:py-6 ">
       <span className="opacity-20">{children}</span>
-      <span style={{ opacity }} className="absolute left-0">
+      <span style={{ opacity }} className="absolute left-0 ">
         {children}
       </span>
     </span>

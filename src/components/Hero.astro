@@ -3,38 +3,53 @@ import AnimatedHeroText from './AnimatedHeroText.tsx';
 ---
 
 <div class="w-full">
-  <section class="px-6 py-12 lg:p-48">
+  <section class="px-6 py-12 lg:pt-24 lg:pb-64 mx-auto w-full xl:w-7xl">
     <h1
-      class="py-20 text-right font-light font-family-poppins text-4xl leading-16 lg:text-left lg:text-6xl"
+      class="py-16 text-bg-dark text-right font-bold font-family-poppins text-4xl leading-16 lg:text-left lg:text-6xl"
     >
-      Weboldalak és webappok. <br /> Egyedileg. Úgy, ahogy szeretnéd.
+      Weboldalak és webappok. Egyedileg.
     </h1>
+    <p
+      class="text-left mt-12 mb-6 font-semibold text-primary-text font-family-poppins md:text-left md:leading-7 lg:text-3xl lg:w-4xl lg:leading-9"
+    >
+      Letisztult dizájn és megbízható technológia gondoskodik róla, hogy a webes
+      megoldásod ne csak szép legyen, hanem teljesítsen is.
+    </p>
+    <ul
+      class="flex flex-wrap mt-12 items-center gap-3 mb-4 font-family-space text-rose-700"
+    >
+      <li class="px-2 py-2 font-semibold">Webdesign</li>
+      <li>|</li>
+      <li class="px-2 py-2 font-semibold">Weboldal készítés</li>
+      <li>|</li>
+      <li class="px-2 py-2 font-semibold">Webapp készítés</li>
+      <li>|</li>
+      <li class="px-2 py-2 font-semibold">Egyedi fejlesztés</li>
+    </ul>
+
     <div class="flex flex-col">
       <div
-        class="flex flex-col items-center md:items-start md:ml-auto md:w-fit"
+        class="flex flex-col mt-16 items-center md:items-start md:ml-auto md:w-fit"
       >
-        <p
-          class="text-left mb-6 font-family-space md:text-left md:leading-7 lg:text-xl lg:leading-9"
-        >
-          Letisztult dizájn és megbízható technológia <br
-            class="hidden lg:block"
-          /> gondoskodik róla, hogy a webes megoldásod <br
-            class="hidden lg:block"
-          /> ne csak szép legyen, hanem teljesítsen is.
-        </p>
-
         <a
-          class="block w-fit p-4 bg-button-primary text-center rounded-md font-bold font-family-inter"
           href="#contact"
+          class="relative px-6 py-3 text-lg bg-linear-to-r from-teal-700 to-gray-700 rounded-4xl text-white font-bold overflow-hidden group cursor-pointer hover:scale-105 duration-300"
         >
-          Beszéljünk a projektedről!
+          <!-- sweep layer -->
+          <span
+            class="absolute inset-0 bg-white opacity-30 rotate-45 -translate-x-full group-hover:translate-x-full blur-sm transition-transform duration-500"
+          ></span>
+
+          <span class="relative z-10">Beszéljünk a projektedről!</span>
         </a>
       </div>
     </div>
   </section>
-  <section
-    class="relative bg-primary-bg text-primary-text font-black text-left text-4xl py-20 px-6 leading-16 lg:px-48 lg:text-6xl"
-  >
-    <AnimatedHeroText client:load />
-  </section>
+  <div class="w-full relative bg-linear-to-br from-teal-700 to-gray-700">
+    <section
+      class="text-secondary-text mb-24 text-left font-black text-4xl xl:text-6xl xl:w-8xl py-20 lg:py-40 px-6 leading-16 lg:w-7xl mx-auto lg:px-12 lg:text-5xl"
+    >
+      <AnimatedHeroText client:load />
+    </section>
+  </div>
 </div>

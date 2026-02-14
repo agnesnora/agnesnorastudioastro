@@ -89,7 +89,7 @@ const Char: React.FC<CharProps> = ({ children, progress, range }) => {
   );
 
   return (
-    <span className="relative inline-block lg:py-6 ">
+    <span className="relative inline-block xl:py-4 ">
       <span className="opacity-20">{children}</span>
       <span style={{ opacity }} className="absolute left-0  ">
         {children}

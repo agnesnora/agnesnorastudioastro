@@ -7,28 +7,76 @@ interface Props {
   alt?: string;
 
   techStack: string[];
-  // services: string[];
+  services: string[];
   card: string;
 
   // banner?: string;
   // gallery?: string[];
 }
 
-const { card, alt, name, techStack, id } = Astro.props as Props;
+const { card, alt, name, techStack, services, id } = Astro.props as Props;
 ---
 
-<a href={`/projektek/${id}`} class="block hover:opacity-90 transition">
-  <div class="overflow-hidden rounded-3xl shadow-xl">
+<a href={`/projektek/${id}`} class="group block py-6">
+  <div class="relative overflow-hidden rounded-3xl shadow-xl">
     <img
       src={card}
       alt={alt}
-      class="w-full h-auto rounded-3xl object-cover"
+      class="w-full h-auto object-cover transition duration-300 group-hover:scale-[1.02]"
       loading="lazy"
       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
     />
+
+    {/* DARK OVERLAY (only lg+) */}
+    <div
+      class="hidden lg:block absolute inset-0 bg-black/0 group-hover:bg-black/40 transition duration-300"
+    >
+    </div>
+
+    {/* OVERLAY CONTENT (only lg+) */}
+    <div
+      class="hidden lg:flex
+        absolute inset-0
+        flex-col justify-end
+        p-6
+        opacity-0 translate-y-4
+        group-hover:opacity-100 group-hover:translate-y-0
+        transition duration-300"
+    >
+      <div class="flex flex-wrap gap-2 text-sm text-white/90">
+        {
+          services
+            .slice(0, 4)
+            .map((tech: string) => (
+              <span class="font-family-space border uppercase px-3 py-2 border-white/30 rounded-2xl bg-white/10 backdrop-blur">
+                {tech}
+              </span>
+            ))
+        }
+      </div>
+
+      <h1 class="text-2xl font-bold text-white font-family-space mt-4">
+        {name}
+      </h1>
+    </div>
   </div>
-  <div class="flex flex-wrap gap-2 mt-4 text-sm text-primary-text">
-    {techStack.map((tech: string) => <span>{tech}</span>)}
+
+  {/* MOBILE/TABLET CONTENT (sm + md only) */}
+  <div class="lg:hidden">
+    <div class="flex flex-wrap gap-2 text-sm text-primary-text my-8">
+      {
+        services
+          .slice(0, 4)
+          .map((tech: string) => (
+            <span class="font-family-space border uppercase p-2 border-zinc-400 rounded-2xl">
+              {tech}
+            </span>
+          ))
+      }
+    </div>
+
+    <h1 class="text-3xl font-bold text-bg-dark-bg font-family-space my-4">
+      {name}
+    </h1>
   </div>
-  <h1 class="text-xl font-bold mt-2">{name}</h1>
 </a>

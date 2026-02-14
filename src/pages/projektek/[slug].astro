@@ -23,10 +23,12 @@ const galleryImages = (project.images.gallery ?? []).map((imgObj) => ({
       class="w-full flex flex-col items-start lg:items-center pl-8 my-12 lg:mt-32 lg:mb-24"
     >
       <h1
-        class="text-3xl lg:text-5xl xl:text-6xl font-family-space text-left lg:text-center font-bold text-dark-bg mb-4"
+        class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-family-space text-left lg:text-center font-bold text-dark-bg mb-4"
       >
         {project.name}
-      </h1><p>{project.year}</p>
+      </h1><p class="font-family-space font-medium text-xl lg:text-2xl">
+        {project.year}
+      </p>
     </div>
 
     <div class="relative w-full mx-auto overflow-hidden">
@@ -56,16 +58,16 @@ const galleryImages = (project.images.gallery ?? []).map((imgObj) => ({
       }
     </div> -->
     <div class="w-full mx-auto lg:w-4xl xl:w-7xl">
-      <div class="w-5/6 lg:max-w-5xl p-4 my-12">
+      <div class="w-5/6 md:w-max-2xl lg:max-w-5xl p-4 my-12">
         <h2
-          class="text-sm text-dark-bg font-family-space font-bold uppercase mb-4"
+          class="text-lg lg:text-2xl text-dark-bg font-family-space font-bold uppercase mb-4"
         >
           Szolgáltatások
         </h2>
         <ul class="text-primary-text grid-cols-2 gap-6">
           {
             project.services?.map((tech) => (
-              <li class=" py-2 px-4 rounded-xl mr-2 my-2 bg-slate-100 text-sm font-medium inline-block">
+              <li class="   mr-2 my-2 font-family-space border uppercase px-3 py-2 border-black/30 rounded-2xl bg-white/10 backdrop-blur text-sm font-medium inline-block">
                 {tech}
               </li>
             ))
@@ -73,9 +75,11 @@ const galleryImages = (project.images.gallery ?? []).map((imgObj) => ({
         </ul>
       </div>
 
-      <div class="w-full p-4 mt-12prose prose-lg max-w-none my-12">
+      <div
+        class="w-5/6 md:w-2xl lg:w-3xl p-4 mt-12prose prose-lg max-w-none my-12"
+      >
         <h2
-          class="text-sm text-dark-bg font-family-space font-bold uppercase mb-4"
+          class="text-lg lg:text-2xl text-dark-bg font-family-space font-bold uppercase mb-4"
         >
           Projekt leírás
         </h2>
@@ -86,14 +90,14 @@ const galleryImages = (project.images.gallery ?? []).map((imgObj) => ({
       <ImageGallery images={galleryImages} />
       <div class="w-5/6 p-4 my-12">
         <h2
-          class="text-sm text-dark-bg font-family-space font-bold uppercase my-4"
+          class="text-lg lg:text-2xl text-dark-bg font-family-space font-bold uppercase my-4"
         >
           Technológia
         </h2>
         <ul class="text-primary-text grid-cols-3 gap-2">
           {
             project.techStack?.map((tech) => (
-              <li class="py-2 px-4 border-xl rounded-lg mr-2 my-2 text-secondary-text bg-dark-bg/90 border-dashed inline-block">
+              <li class="py-2 px-4 border-xl rounded-2xl mr-2 my-2 text-secondary-text bg-dark-bg/90 border-dashed inline-block">
                 {tech}
               </li>
             ))

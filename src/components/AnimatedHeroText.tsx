@@ -46,7 +46,7 @@ const AnimatedHeroText = ({
   const words = text.split(' ');
 
   return (
-    <p ref={container} className="relative">
+    <p ref={container} className="relative ">
       {words.map((word, i) => {
         const start = i / words.length;
         const end = start + 1 / words.length;
@@ -68,7 +68,7 @@ const Word: React.FC<WordProps> = ({ children, progress, range }) => {
   const step = amount / children.length;
 
   return (
-    <span className="inline-block">
+    <span className="inline-block ">
       {children.split('').map((char: string, i: number) => {
         const start = range[0] + i * step;
         const end = range[0] + (i + 1) * step;
@@ -91,7 +91,7 @@ const Char: React.FC<CharProps> = ({ children, progress, range }) => {
   return (
     <span className="relative inline-block lg:py-6 ">
       <span className="opacity-20">{children}</span>
-      <span style={{ opacity }} className="absolute left-0 ">
+      <span style={{ opacity }} className="absolute left-0  ">
         {children}
       </span>
     </span>

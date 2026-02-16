@@ -22,7 +22,16 @@ const accentClass =
 const maskId = `mask-${String(title).trim().toLowerCase().replace(/\s+/g, '-')}`;
 ---
 
-<div class="relative flex flex-col h-full w-full min-h-150 group">
+<div
+  class="relative
+  flex
+  flex-col
+  h-full
+  w-full
+  min-h-150
+  group
+  min-w-[360]"
+>
   <div class="absolute inset-0 z-0">
     <svg
       viewBox="0 0 370 921"

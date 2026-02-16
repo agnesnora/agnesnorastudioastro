@@ -27,6 +27,21 @@ const AnimatedServiceCard = () => {
     rafRef.current = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(rafRef.current);
   }, [tick]);
+  const [stepVh, setStepVh] = useState(100);
+
+  useEffect(() => {
+    const updateStepVh = () => {
+      const w = window.innerWidth;
+      if (w >= 1536) setStepVh(60);
+      else if (w >= 1280) setStepVh(70);
+      else if (w >= 1024) setStepVh(80);
+      else setStepVh(100);
+    };
+
+    updateStepVh();
+    window.addEventListener('resize', updateStepVh);
+    return () => window.removeEventListener('resize', updateStepVh);
+  }, []);
 
   const services = data.services;
 
@@ -34,7 +49,7 @@ const AnimatedServiceCard = () => {
     <div
       ref={container}
       className="relative"
-      style={{ height: `${services.length * 100}vh` }}
+      style={{ height: `${services.length * stepVh}vh` }}
     >
       {services.map((service, i) => {
         const targetScale = 1 - (services.length - i) * 0.05;

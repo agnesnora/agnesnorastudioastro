@@ -1,10 +1,13 @@
 ---
-import AnimatedServiceCard from './AnimatedServiceCard.tsx';
+import HorizontalServiceCards from './HorizontalServiceCards.tsx';
 ---
 
-<section class="pt-16 mt-16 lg:mt-32 px-4">
-  <h1 class="font-family-space font-bold mb-12 text-3xl text-center">
+<section class="pt-16 mt-16 lg:mt-32">
+  <h1
+    class="font-family-space font-bold mb-4
+   text-3xl text-center px-4 lg:text-4xl xl:text-5xl"
+  >
     Szolgáltatások
   </h1>
-  <AnimatedServiceCard client:load />
+  <HorizontalServiceCards client:load />
 </section>

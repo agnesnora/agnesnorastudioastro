@@ -32,7 +32,7 @@ const Card = ({
   const scale = 1 - normalizedProgress * (1 - targetScale);
 
   return (
-    <div className="h-screen sticky top-0 flex items-center justify-center px-4">
+    <div className="h-screen max-h-[800px] sticky top-24 flex items-start justify-center px-4">
       <div
         className={`${bgColor} ${color} relative rounded-2xl p-8 lg:p-12 w-full max-w-4xl origin-top shadow-lg`}
         style={{

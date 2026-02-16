@@ -8,18 +8,40 @@ import '../styles/global.css';
 <html lang="hu">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
+
+    <!-- Google Fonts: preconnect + non-render-blocking load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;700&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Third-party resource hints -->
+    <link rel="dns-prefetch" href="https://web3forms.com" />
+    <link rel="dns-prefetch" href="https://js.hcaptcha.com" />
   </head>
   <body>
     <Header />
     <slot />
-
-    <!-- Web3Forms script -->
-    <script src="https://web3forms.com/client/script.js" async defer></script>
     <Footer />
   </body>
 </html>

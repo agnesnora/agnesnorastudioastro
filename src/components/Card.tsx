@@ -43,7 +43,7 @@ const Card = ({
         <h2 className="text-2xl md:text-3xl font-extrabold my-4">{title}</h2>
         <div className="lg:flex lg:items-start lg:justify-between gap-4 lg:gap-8">
           <div className="mb-8 md:w-xl">
-            <h3 className="text-md font-extralight uppercase mt-8 mb-4 lg:mt-0">
+            <h3 className="text-md font-light uppercase mt-8 mb-4 lg:mt-0">
               Miben segítek?
             </h3>
             <p className="text-lg md:text-xl font-semibold text-left">

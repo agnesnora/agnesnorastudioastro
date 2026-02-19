@@ -3,7 +3,7 @@ const { imageSrc, alt, cardTitle, description } = Astro.props;
 ---
 
 <div
-  class="bg-primary-bg p-6 rounded-3xl text-center flex flex-col items-center gap-4"
+  class="bg-primary-bg p-6 rounded-3xl text-center flex flex-col items-center gap-4 w-full max-w-sm lg:max-w-xs xl:max-w-md"
 >
   <img
     src={imageSrc}
@@ -14,7 +14,5 @@ const { imageSrc, alt, cardTitle, description } = Astro.props;
     loading="lazy"
   />
   <h1 class="font-family-space font-bold text-xl">{cardTitle}</h1>
-  <p class="w-5/6 font-family-poppins text-sm">
-    {description}
-  </p>
+  <p class="w-5/6 font-family-poppins text-sm">{description}</p>
 </div>

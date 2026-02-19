@@ -13,7 +13,7 @@ interface CharProps {
 }
 
 const AnimatedHeroText = ({
-  text = 'Reszponzív, gyors és átgondolt digitális élményeket készítek,amik valódi értéket adnak az online jelenlétedhez.',
+  text = 'Olyan digitális élményeket készítek, amelyek nemcsak jól néznek ki, hanem valódi értéket is adnak a vállalkozásodnak.',
 }) => {
   const container = useRef<HTMLParagraphElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);

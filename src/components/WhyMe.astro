@@ -3,7 +3,7 @@ import IconCard from './IconCard.astro';
 ---
 
 <div
-  class="w-full bg-secondary-bg px-8 py-32 md:p-16 lg:py-64 text-primary-text"
+  class="w-full bg-secondary-bg px-8 py-32 md:p-16 lg:py-32 text-primary-text"
 >
   <h1
     class="font-family-space font-bold text-3xl lg:text-4xl xl:text-5xl text-center mb-12"
@@ -11,23 +11,29 @@ import IconCard from './IconCard.astro';
     Miért dolgozz velem?
   </h1>
   <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
-    <IconCard
-      imageSrc="/Wallet.webp"
-      alt="Pénztárca ikon"
-      cardTitle="Költséghatékonyság"
-      description="A vállalkozásod többet érdemel egy sablonnál. Tűnj ki egy olyan egyedi megjelenéssel, amely valóban megszólítja a felhasználóidat."
-    />
-    <IconCard
-      imageSrc="/UI UX.webp"
-      alt="Dizájn ikon"
-      cardTitle="Egyedi reszponzív dizájn"
-      description="A vállalkozásod többet érdemel egy sablonnál. Tűnj ki egy olyan egyedi megjelenéssel, amely valóban megszólítja a felhasználóidat."
-    />
-    <IconCard
-      imageSrc="/Rocket.webp"
-      alt="Rakéta ikon"
-      cardTitle="Gyorsaság, SEO, Teljesítmény"
-      description="A vállalkozásod többet érdemel egy sablonnál. Tűnj ki egy olyan egyedi megjelenéssel, amely valóban megszólítja a felhasználóidat."
-    />
+    <div class="flex justify-center">
+      <IconCard
+        imageSrc="/Wallet.webp"
+        alt="Pénztárca ikon"
+        cardTitle="Költséghatékonyság"
+        description="A vállalkozásod többet érdemel egy sablonnál. Tűnj ki egy olyan egyedi megjelenéssel, amely valóban megszólítja a felhasználóidat."
+      />
+    </div>
+    <div class="flex justify-center">
+      <IconCard
+        imageSrc="/UI UX.webp"
+        alt="Dizájn ikon"
+        cardTitle="Egyedi reszponzív dizájn"
+        description="A vállalkozásod többet érdemel egy sablonnál. Tűnj ki egy olyan egyedi megjelenéssel, amely valóban megszólítja a felhasználóidat."
+      />
+    </div>
+    <div class="flex justify-center">
+      <IconCard
+        imageSrc="/Rocket.webp"
+        alt="Rakéta ikon"
+        cardTitle="Gyorsaság, SEO, Teljesítmény"
+        description="A vállalkozásod többet érdemel egy sablonnál. Tűnj ki egy olyan egyedi megjelenéssel, amely valóban megszólítja a felhasználóidat."
+      />
+    </div>
   </div>
 </div>

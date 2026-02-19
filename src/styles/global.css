@@ -1,4 +1,8 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/inter';
+@import '@fontsource/poppins';
+
+@import '@fontsource-variable/space-grotesk';
 
 @theme {
   --font-family-inter: 'Inter', sans-serif;

@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { services } from '../../data/services.json';
+
+// type Service = {
+//   id: number;
+//   title: string;
+//   description: string;
+//   features: string[];
+//   forWho: string;
+//   bgColor: string;
+//   color: string;
+//   longDescription: string;
+//   longFeatures: string[];
+//   slug?: string;
+// };
+
+export async function getStaticPaths() {
+  return services.map((service) => ({
+    params: { slug: service.slug },
+  }));
+}
+const { slug } = Astro.params;
+const service = services.find((s) => s.slug === slug);
+
+if (!service) {
+  throw new Error('Service not found');
+}
+---
+
+<Layout>
+  <div class="mb-16">
+    <div class="w-full flex flex-col items-start lg:items-center">
+      <h1
+        class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-family-space text-left lg:text-center font-bold text-dark-bg mb-4"
+      >
+        <!-- {long.title} -->
+      </h1>
+    </div>
+
+    <div class="relative w-full mx-auto overflow-hidden">
+      <div class="absolute inset-0 bg-linear-to-bl from-teal-50 to-neutral-100">
+      </div>
+      <div
+        class="absolute inset-0 blur-2xl opacity-40 bg-linear-to-tr from-white/30 to-transparent"
+      >
+      </div>
+    </div>
+
+    <!-- <div class="flex gap-2 mb-8">
+      {
+        project.techStack.map((tech) => (
+          <span class="bg-sage-bg-light text-primary-text text-sm px-3 py-1 rounded-full">
+            {tech}
+          </span>
+        ))
+      }
+    </div> -->
+    <div class="w-full mx-auto lg:w-4xl xl:w-7xl">
+      <div class="w-5/6 md:w-max-2xl lg:max-w-5xl p-4 my-12">
+        <h2
+          class="text-lg lg:text-2xl text-dark-bg font-family-space font-bold uppercase mb-4"
+        >
+          Szolgáltatások
+        </h2>
+        <h3>{service.forWho}</h3>
+      </div>
+
+      <div
+        class="w-5/6 md:w-2xl lg:w-3xl p-4 mt-12prose prose-lg max-w-none my-12"
+      >
+        <h2
+          class="text-lg lg:text-2xl text-dark-bg font-family-space font-bold uppercase mb-4"
+        >
+          Projekt leírás
+        </h2>
+        <p class="text-primary-text leading-relaxed">
+          {service.longDescription}
+        </p>
+      </div>
+
+      <div class="w-5/6 p-4 my-12">
+        <h2
+          class="text-lg lg:text-2xl text-dark-bg font-family-space font-bold uppercase my-4"
+        >
+          Technológia
+        </h2>
+        <ul class="text-primary-text grid-cols-3 gap-2">
+          {
+            service.longFeatures.map((tech) => (
+              <li class="py-2 px-4 border-xl rounded-2xl mr-2 my-2 text-secondary-text bg-dark-bg/90 border-dashed inline-block">
+                {tech}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</Layout>

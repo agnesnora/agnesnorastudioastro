@@ -1,13 +1,13 @@
 ---
-import HorizontalServiceCards from './HorizontalServiceCards';
+import data from '../data/services.json';
+import ServiceCards from './ServiceCards.astro';
 ---
 
 <section class="pt-16 mt-16 lg:mt-32">
   <h1
-    class="font-family-space font-bold mb-4
-   text-3xl text-center px-4 lg:text-4xl xl:text-5xl"
+    class="font-family-space font-bold mb-32 text-3xl text-center px-4 lg:text-4xl xl:text-5xl"
   >
     Szolgáltatások
   </h1>
-  <HorizontalServiceCards client:visible />
+  <ServiceCards services={data.services} />
 </section>

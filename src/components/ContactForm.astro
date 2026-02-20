@@ -60,43 +60,17 @@
 
   <button
     type="submit"
-    class="w-full my-12 text-primary-text bg-button-primary hover:bg-button-hover font-bold py-4 rounded-2xl tracking-wide"
+    class="relative w-full my-12 text-primary-bg cursor-pointer text-xl font-black bg-gray-900 py-4 rounded-2xl tracking-wide overflow-hidden group"
   >
-    Üzenet elküldése
-  </button>
-</form><div class="flex flex-col mx-auto">
-  <h3 class="text-center">
-    Ha szeretnél azonnal időpontot foglalni, kattints a gombra!
-  </h3>
-  <a
-    href="https://tidycal.com/agnesnorastudio/30-minute-meeting"
-    class="relative px-8 mx-auto py-8 mt-8 rounded-2xl block bg-dark-bg text-white text-center group transform transition-transform duration-300 hover:scale-105"
-  >
-    <!-- szöveg + ikon -->
-    <span class="relative z-10 flex items-center gap-3">
-      Foglalj időpontot!
-      <span
-        class="w-10 h-10 flex items-center justify-center bg-white rounded-full"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="#3F5F59"
-        >
-          <path d="m14 18-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45 14 6l6 6z"
-          ></path>
-        </svg>
-      </span>
-    </span>
-
-    <!-- sweep layer -->
+    <!-- Sweep layer -->
     <span
       class="absolute inset-0 bg-white opacity-30 rotate-45 -translate-x-full group-hover:translate-x-full blur-sm transition-transform duration-500"
     ></span>
-  </a>
-</div>
+
+    <!-- Szöveg -->
+    <span class="relative z-10">Üzenet elküldése</span>
+  </button>
+</form>
 
 <script>
   const observer = new IntersectionObserver(

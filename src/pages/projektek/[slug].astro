@@ -19,35 +19,31 @@ const galleryImages = (project.images.gallery ?? []).map((imgObj) => ({
 
 <Layout>
   <div class="mb-16">
-    <div
-      class="w-full flex flex-col items-start lg:items-center pl-8 my-12 lg:mt-32 lg:mb-24"
+    <h1
+      class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-family-space text-left lg:text-center font-bold text-dark-bg mb-4"
     >
-      <h1
-        class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-family-space text-left lg:text-center font-bold text-dark-bg mb-4"
-      >
-        {project.name}
-      </h1><p class="font-family-space font-medium text-xl lg:text-2xl">
-        {project.year}
-      </p>
+      {project.name}
+    </h1><p class="font-family-space font-medium text-xl lg:text-2xl">
+      {project.year}
+    </p>
+  </div>
+
+  <div class="relative w-full mx-auto overflow-hidden">
+    <div class="absolute inset-0 bg-linear-to-bl from-teal-50 to-neutral-100">
+    </div>
+    <div
+      class="absolute inset-0 blur-2xl opacity-40 bg-linear-to-tr from-white/30 to-transparent"
+    >
     </div>
 
-    <div class="relative w-full mx-auto overflow-hidden">
-      <div class="absolute inset-0 bg-linear-to-bl from-teal-50 to-neutral-100">
-      </div>
-      <div
-        class="absolute inset-0 blur-2xl opacity-40 bg-linear-to-tr from-white/30 to-transparent"
-      >
-      </div>
-
-      <div class="relative z-10 p-6 md:p-10">
-        <img
-          src={project.images.banner}
-          alt={project.alt}
-          width="1200"
-          height="675"
-          class="mx-auto w-full max-w-5xl h-auto object-contain"
-        />
-      </div>
+    <div class="relative z-10 p-6 md:p-10">
+      <img
+        src={project.images.banner}
+        alt={project.alt}
+        width="1200"
+        height="675"
+        class="mx-auto w-full max-w-5xl h-auto object-contain"
+      />
     </div>
 
     <!-- <div class="flex gap-2 mb-8">

@@ -3,6 +3,7 @@
     {
       "id": 1,
       "title": "Webdizján",
+      "longTitle": "Egyedi webdizájn sablonok nélkül",
       "slug": "webdizájn",
       "description": "Letisztult, reszponzív dizájn, ami bizalmat épít és támogatja az üzleti céljaidat.",
       "features": [
@@ -11,31 +12,53 @@
         "Felhasználóbarát tervezés",
         "Figma alapú tervek"
       ],
+      "hero": "Nem sablonból dolgozom, de nem is marketinges buzzwordökkel operálok.Olyan egyedi webdizájnt készítek, amely letisztult, modern és támogatja az oldal funkcióját.A fókusz a használhatóságon, az átlátható struktúrán és az üzleti célokon van.",
+      "how": "A webdizájn nálam nem különálló „grafikai” elem, hanem a fejlesztési folyamat része.A struktúrát, layoutot és vizuális elemeket úgy tervezem meg, hogy azok technikailag is stabilan, gyorsan és reszponzívan működjenek.Nem végzek mély UX kutatást vagy márkastratégiai tervezést —viszont biztosítom, hogy a weboldalad vizuálisan egységes, átlátható és professzionális legyen.",
       "longDescription": "Részletes webdizájn folyamat: wireframe-ek, vizuális hierarchia, UX-optimalizálás, reszponzív layoutok minden eszközre. A dizájn a márkád identitását erősíti, és segít a látogatók figyelmének irányításában.",
-      "forWho": "Kis- és középvállalkozásoknak, startupoknak vagy mindenki számára, aki szeretné, hogy az online megjelenése profi és bizalmat építő legyen.",
-      "longFeatures": [
-        "Egyedi arculatra szabott megjelenés",
-        "Reszponzív, mobilbarát kialakítás",
-        "Felhasználói élményre optimalizált struktúra",
-        "Figma alapú tervezés",
-        "Komponens alapú UI rendszer",
-        "Tipográfia és színpaletta optimalizálása"
+      "forWho": [
+        "Nem akarsz sablonos megjelenést",
+        "Fontos a modern, profi vizuális összhatás",
+        "Szeretnél egy átgondolt, jól strukturált weboldalt",
+        "Nem teljes arculattervezésre, hanem webes megjelenésre van szükséged"
       ],
+      "longFeatures": [
+        "Egyedi vizuális megjelenés kialakítása",
+        "Letisztult, strukturált layout",
+        "Reszponzív design minden eszközre",
+        "Tudatos tipográfia és színhasználat",
+        "Konverziót segítő oldalstruktúra",
+        "Fejlesztésre optimalizált design"
+      ],
+      "techBackground:": [
+        "Modern layout rendszerek",
+        "Reszponzív grid alapú felépítés",
+        "Performance szemlélet",
+        "Fejlesztésorientált design döntések"
+      ],
+      "CTA": "Ha sablon helyett egy egyedi, letisztult webes megjelenést szeretnél, beszéljünk róla és tervezzünk működő megoldást.",
       "bgColor": "bg-yellow-bg",
       "color": "text-primary-text"
     },
     {
       "id": 2,
       "title": "Weboldalfejlesztés",
+      "longTitle": "Gyors, stabil és jövőbiztos weboldalak",
       "description": "Gyors, SEO-barát weboldalak modern technológiával (Next.js, Astro), hosszú távra tervezve.",
       "features": [
-        "Gyors és stabil technológiai alap",
-        "SEO ompimalizált struktúra",
-        "Tartalomkezelő rendszer",
-        "Marketing eszközök integrálása"
+        "Teljes weboldal fejlesztés nulláról",
+        "Reszponzív, mobilbarát kialakítás",
+        "SEO-barát struktúra",
+        "Teljesítmény optimalizálás",
+        "Skálázható kódbázis",
+        "CMS integráció igény szerint"
       ],
       "longDescription": "Teljesen egyedi weboldalak Next.js vagy Astro stackkel. SEO-barát struktúra, gyors betöltés, könnyen kezelhető CMS, marketing eszközök integrációja. Minden weboldal hosszú távra van tervezve, bővíthető és skálázható.",
-      "forWho": "Vállalkozásoknak, akik szeretnének stabil, gyors és bővíthető weboldalt, ami támogatja a növekedést és marketing célokat.",
+      "forWho": [
+        "Profi, technikailag stabil weboldalt szeretnél",
+        "Fontos a gyors betöltési idő",
+        "Skálázható megoldásban gondolkodsz",
+        "Hosszú távra tervezel"
+      ],
 
       "slug": "weboldalfejlesztes",
       "longFeatures": [
@@ -46,12 +69,22 @@
         "Skálázható, bővíthető weboldal struktúra",
         "Modern fejlesztési workflow"
       ],
+      "techBackground:": [
+        "AstroJs",
+        "React",
+        "Tailwind CSS",
+        "TypeScript",
+        "Headless CMS"
+      ],
+      "how": "Nem használok nehézkes, túlterhelt rendszereket.Letisztult, optimalizált technológiákkal dolgozom, amelyek gyorsak és karbantarthatók.",
+      "CTA": "Szeretnél egy gyors és stabil weboldalt, ami valóban támogatja az üzleted?Kérj ajánlatot, és nézzük meg, mire van szükséged.",
       "bgColor": "bg-rose-bg",
       "color": "text-primary-text"
     },
     {
       "id": 3,
       "title": "Webalkalmazás fejlesztés",
+      "longTitle": "Modern webdizájn, ami segít kitűnni a versenytársaid közül.",
       "description": "Egyedi üzleti logikára épülő webalkalmazások, skálázható rendszerben.",
       "features": [
         "Egyedi adminfelület",
@@ -62,7 +95,7 @@
       ],
       "slug": "webalkalmazas-fejlesztes",
       "longDescription": "Komplex webalkalmazások felhasználóbarát felülettel, automatizált folyamatokkal, API integrációkkal. Az adminfelület és moduláris struktúra lehetővé teszi a későbbi bővítést, és minden üzleti folyamatot pontosan követ.",
-      "forWho": "Olyan vállalkozásoknak, akik speciális üzleti folyamatokat szeretnének online automatizálni, és hosszú távon bővíthető rendszert igényelnek.",
+
       "longFeatures": [
         "Egyedi adminfelület és tartalomkezelés",
         "Időpontfoglaló és jelentkezési rendszerek",
@@ -71,12 +104,30 @@
         "Automatizált folyamatok",
         "Felhasználói élmény optimalizálása minden eszközön"
       ],
+      "forWho": [
+        "Manuális folyamatokat szeretnél automatizálni",
+        "Saját ügyfél- vagy belső rendszerre van szükséged",
+        "Egyedi funkcionalitás kell, nem sablon",
+        "Hosszú távon skálázható megoldásban gondolkodsz"
+      ],
+      "techBackground:": [
+        "AstroJs",
+        "React",
+        "NextJs",
+        "Rest/API integrációk",
+        "Tailwind CSS",
+        "TypeScript",
+        "Cloud alapú deployment"
+      ],
+      "how": "A fejlesztés mindig az üzleti logika megértésével kezdődik. Nem funkciókat építek, hanem rendszert tervezek. A cél egy stabil, biztonságos és bővíthető architektúra.",
+      "CTA": "Ha van egy ötleted vagy konkrét problémád, amit webes rendszerrel oldanál meg,beszéljünk róla és tervezzünk működő megoldást.",
       "bgColor": "bg-sage-bg-light",
       "color": "text-primary-text"
     },
     {
       "id": 4,
       "title": "Weboldal Audit és Migráció",
+      "longTitle": "Modern webdizájn, ami segít kitűnni a versenytársaid közül.",
       "slug": "weboldal-audit",
       "description": "Meglévő weboldalad technikai rendbetétele, gyorsítása és biztonságos költöztetése.",
       "features": [
@@ -86,8 +137,15 @@
         "Biztonsági frissítések és mentések",
         "Platformváltás támogatása"
       ],
+      "how": "Az audit során átnézem a weboldalad technikai és használhatósági szempontból, feltárom a problémákat, és egy érthető, priorizált javaslatcsomagot kapsz, ami világos fejlesztési irányt ad a jobb teljesítmény és konverzió érdekében.",
       "longDescription": "Teljes technikai és SEO audit, adat- és tartalom migráció, biztonsági frissítések és sebességoptimalizálás. Biztonságosan költöztetem az oldalt új környezetbe, adatvesztés nélkül, és biztosítom a folyamatos működést.",
-      "forWho": "Minden vállalkozásnak, akiknek már van weboldaluk, de elavult, lassú, vagy szeretnék új platformra költöztetni anélkül, hogy adatot veszítenének.",
+      "forWho": [
+        "Kevés megkeresést kapsz",
+        "Magas a visszafordulási arány",
+
+        "Lassú az oldal",
+        "PNem tudod miért nem teljesít jól"
+      ],
       "longFeatures": [
         "Technikai és SEO állapotfelmérés",
         "Adatbázis és tartalom költöztetése",
@@ -96,6 +154,15 @@
         "Biztonsági frissítések és mentések",
         "Platformváltás támogatása"
       ],
+      "techBackgorund": [
+        "Technikai és SEO audit",
+        "Adat- és tartalom migráció",
+        "Domain és tárhely konfiguráció",
+        "Sebességoptimalizálás",
+        "Biztonsági frissítések és mentések",
+        "Platformváltás támogatása"
+      ],
+
       "bgColor": "bg-sage-bg-dark",
       "color": "text-secondary-text"
     }

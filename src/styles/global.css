@@ -5,9 +5,9 @@
 @import '@fontsource-variable/space-grotesk';
 
 @theme {
-  --font-family-inter: 'Inter', sans-serif;
+  --font-family-inter: 'Inter Variable', sans-serif;
   --font-family-poppins: 'Poppins', sans-serif;
-  --font-family-space: 'Space Grotesk', sans-serif;
+  --font-family-space: 'Space Grotesk Variable', sans-serif;
 
   --color-primary-bg: #fdfaf7;
   --color-secondary-bg: #f7ede2;

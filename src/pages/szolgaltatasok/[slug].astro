@@ -29,31 +29,78 @@ if (!service) {
 ---
 
 <Layout>
-  <section class="max-w-7xl px-12 mx-auto mt-24">
-    <h1
-      class="font-family-poppins font-black uppercase text-xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-12"
-    >
-      {service.title}
-    </h1>
-    <h2>{service.longTitle}</h2>
-    <h3>{service.hero}</h3>
-    <p class="font-family-poppins font-black text-lg text-pink-800 uppercase">
-      Miben segítek?
-    </p>
-    <ul>
-      {service.longFeatures.map((feature) => <li>{feature}</li>)}
-    </ul>
-    <p class="font-family-poppins font-black text-lg text-pink-800 uppercase">
-      Kinek ajánlom?
-    </p>
-    <ul>
-      {service.forWho.map((feature) => <li>{feature}</li>)}
-    </ul>
-    <div>
-      <h1>{service.CTA}</h1>
-      <button>CTA</button>
+  <section class=`w-full mt-12 `>
+    <div class="w-full mx-auto h-lg px-12 bg-sage-bg-light pt-32 pb-16">
+      <div class="max-w-7xl mx-auto text-left">
+        <h1
+          class="font-family-poppins text-primary-text font-black uppercase text-xl lg:text-5xl xl:text-6xl 2xl:text-9xl mb-4"
+        >
+          {service.title}
+        </h1>
+        <h2
+          class="text-6xl py-8 font-family-poppins font-black bg-linear-to-r from-teal-700 to-gray-700 bg-clip-text text-transparent"
+        >
+          {service.longTitle}
+        </h2>
+        <h3 class="max-w-4xl my-12 text-2xl font-family-inter font-bold">
+          {service.hero}
+        </h3>
+        <a
+          href="#kapcsolat"
+          class="relative h-20 px-8 py-8 mt-8 justify-self-end rounded-2xl text-xl font-black bg-dark-bg text-white flex items-center gap-3 overflow-hidden group transform transition-transform duration-300 hover:scale-105"
+        >
+          <!-- szöveg + ikon -->
+          <span class="relative z-10 flex items-center gap-3">
+            Beszéljünk a projektedről!
+            <span
+              class="w-10 h-10 flex items-center justify-center bg-white rounded-full"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="#3F5F59"
+              >
+                <path
+                  d="m14 18-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45 14 6l6 6z"
+                ></path>
+              </svg>
+            </span>
+          </span>
+
+          <!-- sweep layer -->
+          <span
+            class="absolute inset-0 bg-white opacity-30 rotate-45 -translate-x-full group-hover:translate-x-full blur-sm transition-transform duration-500"
+          ></span>
+        </a>
+      </div>
     </div>
-    <!-- <div class="flex gap-2 mb-8">
+
+    <div class="max-w-7xl mx-auto my-32">
+      <h2 class="font-family-space text-6xl font-black text-primary-text mb-8">
+        Miben segítek?
+      </h2>
+      <ul class="flex flex-wrap gap-8">
+        {
+          service.longFeatures.map((feature) => (
+            <li class="w-72 text-lg p-8 items-center  bg-sage-bg-light/40 rounded-2xl  font-bold font-family-space text-primary-text">
+              {feature}
+            </li>
+          ))
+        }
+      </ul>
+      <p class="font-family-poppins font-black text-lg text-pink-800 uppercase">
+        Kinek ajánlom?
+      </p>
+      <ul>
+        {service.forWho.map((feature) => <li>{feature}</li>)}
+      </ul>
+      <div>
+        <h1>{service.CTA}</h1>
+        <button>CTA</button>
+      </div>
+      <!-- <div class="flex gap-2 mb-8">
       {
         project.techStack.map((tech) => (
           <span class="bg-sage-bg-light text-primary-text text-sm px-3 py-1 rounded-full">
@@ -62,44 +109,45 @@ if (!service) {
         ))
       }
     </div> -->
-    <div class="w-full mx-auto lg:w-4xl xl:w-7xl">
-      <div>
-        <h2
-          class="text-lg lg:text-2xl text-dark-bg font-family-space font-bold uppercase mb-4"
-        >
-          Szolgáltatások
-        </h2>
-        <h3>{service.forWho}</h3>
-      </div>
+      <div class="w-full mx-auto lg:w-4xl xl:w-7xl">
+        <div>
+          <h2
+            class="text-lg lg:text-2xl text-dark-bg font-family-space font-bold uppercase mb-4"
+          >
+            Szolgáltatások
+          </h2>
+          <h3>{service.forWho}</h3>
+        </div>
 
-      <div
-        class="w-5/6 md:w-2xl lg:w-3xl p-4 mt-12prose prose-lg max-w-none my-12"
-      >
-        <h2
-          class="text-lg lg:text-2xl text-dark-bg font-family-space font-bold uppercase mb-4"
+        <div
+          class="w-5/6 md:w-2xl lg:w-3xl p-4 mt-12prose prose-lg max-w-none my-12"
         >
-          Projekt leírás
-        </h2>
-        <p class="text-primary-text leading-relaxed">
-          {service.longDescription}
-        </p>
-      </div>
+          <h2
+            class="text-lg lg:text-2xl text-dark-bg font-family-space font-bold uppercase mb-4"
+          >
+            Projekt leírás
+          </h2>
+          <p class="text-primary-text leading-relaxed">
+            {service.longDescription}
+          </p>
+        </div>
 
-      <div class="w-5/6 p-4 my-12">
-        <h2
-          class="text-lg lg:text-2xl text-dark-bg font-family-space font-bold uppercase my-4"
-        >
-          Technológia
-        </h2>
-        <ul class="text-primary-text grid-cols-3 gap-2">
-          {
-            service.longFeatures.map((tech) => (
-              <li class="py-2 px-4 border-xl rounded-2xl mr-2 my-2 text-secondary-text bg-dark-bg/90 border-dashed inline-block">
-                {tech}
-              </li>
-            ))
-          }
-        </ul>
+        <div class="w-5/6 p-4 my-12">
+          <h2
+            class="text-lg lg:text-2xl text-dark-bg font-family-space font-bold uppercase my-4"
+          >
+            Technológia
+          </h2>
+          <ul class="text-primary-text grid-cols-3 gap-2">
+            {
+              service.longFeatures.map((tech) => (
+                <li class="py-2 px-4 border-xl rounded-2xl mr-2 my-2 text-secondary-text bg-dark-bg/90 border-dashed inline-block">
+                  {tech}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       </div>
     </div>
   </section>

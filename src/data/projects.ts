@@ -1,5 +1,3 @@
-import { img } from 'framer-motion/client';
-
 export type Project = {
   id: string;
   name: string;

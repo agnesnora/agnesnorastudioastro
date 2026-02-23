@@ -3,11 +3,37 @@ import data from '../data/services.json';
 import ServiceCards from './ServiceCards.astro';
 ---
 
-<section class="pt-16 mt-16 lg:mt-32">
+<section class="pt-16 mt-16 lg:mt-32 mx-auto text-center">
   <h1
     class="font-family-space font-bold mb-32 text-3xl text-center px-4 lg:text-4xl xl:text-5xl"
   >
     Szolgáltatások
   </h1>
   <ServiceCards services={data.services} />
+
+  <div class="mx-auto w-full max-w-7xl px-4 mt-10 flex justify-end">
+    <a
+      href="/szolgaltatasok"
+      class="group inline-flex items-center justify-center gap-2
+             px-2 py-3
+             text-lg text-primary-text font-medium
+             transition-transform hover:scale-105"
+    >
+      <span>Tovább a szolgáltatásokra</span>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-5 h-5 transition-transform group-hover:translate-x-1"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5 12h14m0 0l-6-6m6 6l-6 6"></path>
+      </svg>
+    </a>
+  </div>
 </section>

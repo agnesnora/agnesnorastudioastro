@@ -1,0 +1,88 @@
+---
+type Service = {
+  id: number;
+  title: string;
+  subtitle:string,
+  forWho: string[];
+  how:string;
+  hero:string;
+  description: string;
+  features: string[];
+  bgColor: string;
+  color: string;
+  longDescription: string;
+  longFeatures: string[];
+  slug?: string;
+  longTitle:string;
+  CTA:string;
+  techBackround:string[];
+};
+
+
+const { services } = Astro.props as { services: Service[] };
+---
+
+<div class="mx-auto w-full max-w-5xl px-4 py-8">
+  <div class="grid gap-12 lg:grid-cols-2 items-stretch">
+    {
+      services.map((service, i) => (
+        <article
+          class=`${service.bgColor} ${service.color} card rounded-2xl p-6 md:p-8 shadow-sm flex flex-col opacity-0 translate-y-10 transition-all duration-700 ease-out`
+          style={`transition-delay: ${i * 150}ms`}
+        >
+          <h2 class="font-family-space font-bold text-2xl mb-4">
+            {service.title}
+          </h2>
+          <h3 class="text-lg font-family-inter font-bold mb-6">{service.longTitle}</h3>
+          <p class="font-family-poppins font-medium leading-relaxed">
+            {service.description}
+          </p>
+          <h3 class="text-lg font-family-inter font-bold mt-6 mb-3">Kinek ajánlom?</h3>
+          <ul class="list-inside list-disc">
+            {service.forWho.map((who)=><li>{who}</li>)}
+
+          </ul>
+  <h3 class="text-lg font-family-inter font-bold mt-6 ">Mit kapsz?</h3>
+
+          <ul class="mt-4 space-y-2 ">
+            {service.features.map((feature, idx) => (
+              <li class="flex gap-3 items-start">
+                <span class="font-family-space font-semibold opacity-60">
+                  {String(idx + 1).padStart(2, '0')}
+                </span>
+                <span class="font-family-poppins font-medium">{feature}</span>
+              </li>
+            ))}
+          </ul>
+          <a
+            href=`/szolgaltatasok/${service.slug}`
+            class="mb-12 self-end uppercase px-6 py-3 my-8 text-lg rounded-2xl text-bg-dark font-semibold overflow-hidden group cursor-pointer hover:scale-105 duration-300"
+          >
+       
+
+         Tudj meg többet!
+          </a>
+        </article>
+      ))
+    }
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0', 'translate-y-10');
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+  });
+</script>

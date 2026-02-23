@@ -23,7 +23,7 @@ const { services } = Astro.props as { services: Service[] };
 ---
 
 <div class="mx-auto w-full max-w-5xl px-4 py-8">
-  <div class="grid gap-12 lg:grid-cols-2 items-stretch">
+  <div class="grid gap-12 lg:grid-cols-2 ">
     {
       services.map((service, i) => (
         <article
@@ -44,7 +44,7 @@ const { services } = Astro.props as { services: Service[] };
           </ul>
   <h3 class="text-lg font-family-inter font-bold mt-6 ">Mit kapsz?</h3>
 
-          <ul class="mt-4 space-y-2 ">
+          <ul class="mt-4 space-y-2 mb-12 ">
             {service.features.map((feature, idx) => (
               <li class="flex gap-3 items-start">
                 <span class="font-family-space font-semibold opacity-60">
@@ -54,14 +54,28 @@ const { services } = Astro.props as { services: Service[] };
               </li>
             ))}
           </ul>
-          <a
-            href=`/szolgaltatasok/${service.slug}`
-            class="mb-12 self-end uppercase px-6 py-3 my-8 text-lg rounded-2xl text-bg-dark font-semibold overflow-hidden group cursor-pointer hover:scale-105 duration-300"
-          >
-       
+        <a
+     href=`/szolgaltatasok/${service.slug}`
+      class="inline-flex items-center justify-center  gap-2
+             px-2 py-3 rounded-2xl
+             text-lg font-medium text-primary-text bg-primary-bg
+             transition-transform hover:scale-105 mt-auto hover:bg-dark-bg hover:text-secondary-text">
+      <span>Tudj meg többet</span>
 
-         Tudj meg többet!
-          </a>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-5 h-5 transition-transform group-hover:translate-x-1"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5 12h14m0 0l-6-6m6 6l-6 6"></path>
+      </svg>
+    </a>
         </article>
       ))
     }

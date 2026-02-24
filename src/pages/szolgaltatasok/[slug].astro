@@ -30,31 +30,35 @@ if (!service) {
 ---
 
 <Layout>
-  <section class=`w-full mt-12 `>
-    <div class="w-full mx-auto h-lg px-12 bg-sage-bg-light pt-32 pb-16">
+  <section class=`w-full mt-12 mx-auto`>
+    <div
+      class="w-full mx-auto h-lg px-4 md:px-8 lg:px-12 bg-sage-bg-light pt-16 lg:pt-32 pb-16"
+    >
       <div class="max-w-7xl mx-auto text-left">
         <h1
-          class="font-family-poppins text-primary-text font-black uppercase text-xl lg:text-5xl xl:text-6xl 2xl:text-9xl mb-4"
+          class="font-family-poppins text-primary-text font-black uppercase text-5xl xl:text-6xl 2xl:text-9xl mb-4"
         >
           {service.title}
         </h1>
         <h2
-          class="text-6xl py-8 font-family-poppins font-black bg-linear-to-r from-teal-700 to-gray-700 bg-clip-text text-transparent"
+          class="text-3xl leading-12 lg:text-4xl py-3 lg:py-8 font-family-poppins font-black bg-linear-to-r from-teal-700 to-gray-700 bg-clip-text text-transparent"
         >
           {service.longTitle}
         </h2>
-        <h3 class="max-w-4xl my-12 text-2xl font-family-inter font-bold">
+        <h3
+          class="max-w-2xl lg:max-w-4xl my-12 text-xl lg:text-2xl font-family-inter font-bold"
+        >
           {service.hero}
         </h3>
         <a
           href="#kapcsolat"
-          class="relative h-20 px-8 py-8 mt-8 justify-self-end rounded-2xl text-xl font-black bg-dark-bg text-white flex items-center gap-3 overflow-hidden group transform transition-transform duration-300 hover:scale-105"
+          class="relative h-20 px-4 lg:px-8 py-8 mt-8 justify-center md:justify-self-end rounded-2xl text-lg lg:text-xl font-black bg-dark-bg text-white flex items-center gap-3 overflow-hidden group transform transition-transform duration-300 hover:scale-105"
         >
           <!-- szöveg + ikon -->
           <span class="relative z-10 flex items-center gap-3">
             Beszéljünk a projektedről!
             <span
-              class="w-10 h-10 flex items-center justify-center bg-white rounded-full"
+              class="hidden w-10 h-10 sm:flex items-center justify-center bg-white rounded-full"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -78,15 +82,15 @@ if (!service) {
       </div>
     </div>
 
-    <div class="max-w-7xl mx-auto my-32">
+    <div class="w-full max-w-7xl mx-auto my-32">
       <h2
-        class="relative inline-block text-6xl font-black font-family-space text-primary-text my-16"
+        class="relative mx-4 sm:mx-6 lg:mx-12 inline-block text-6xl font-black font-family-space text-primary-text my-16"
       >
         <span class="relative z-10">Miben segítek?</span>
         <span class="absolute left-0 bottom-2 w-full h-5 bg-secondary-bg z-0"
         ></span>
       </h2>
-      <ul class="flex flex-wrap gap-8">
+      <ul class="flex justify-center flex-wrap gap-8">
         {
           service.longFeatures.map((feature) => (
             <li class="w-72 text-xl p-8 items-center bg-sage-bg-light/50 rounded-2xl  font-bold font-family-space text-primary-text">
@@ -96,10 +100,10 @@ if (!service) {
         }
       </ul>
       <div
-        class="text-secondary-text bg-primary-text px-8 py-12 my-24 rounded-4xl"
+        class="text-secondary-text bg-primary-text px-8 py-12 my-24 xl:rounded-4xl"
       >
         <h2
-          class="relative inline-block text-6xl font-black font-family-space my-8"
+          class="relative inline-block text-6xl px-6 font-black font-family-space my-8"
         >
           <span class="relative z-10">Hogyan dolgozom?</span>
           <!-- <span
@@ -107,8 +111,8 @@ if (!service) {
           ></span> -->
         </h2>
         <p
-          class="max-w-5xl leading-12 text-3xl font-family-inter font-black
-          text-sage-bg-light"
+          class="px-6 max-w-5xl leading-12 text-3xl font-family-inter font-black
+         text-secondary-text"
         >
           {service.how}
         </p>

@@ -14,10 +14,15 @@ import FAQList from '../components/FAQList.astro';
 import AnimatedText from '../components/AnimatedText.astro';
 import CTA from '../components/CTA.astro';
 import Book from '../components/Book.astro';
+
+const title = 'Agnesnora Studio Webfejlesztés';
+const description =
+  'Webfejlesztés, webapp-ok, dashboardok, weboldalak audit Next.js, Astro, React, Tailwind, SCSS technológiákkal.';
+const canonical = 'https://agnesnorastudio.hu/';
 ---
 
 <div class="w-full bg-primary-bg">
-  <Layout>
+  <Layout {title} {canonical} {description}>
     <div>
       <Hero />
       <AnimatedText />

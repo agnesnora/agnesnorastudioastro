@@ -21,6 +21,20 @@ const { title, description, canonical } = Astro.props;
     <link rel="canonical" href={canonical} />
     <title>{title}</title>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H4187EYG0D"
+    ></script>
+{ import.meta.env.PROD && (<><script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag() {
+        window.dataLayer.push(arguments);
+      };
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-XXXXXXX');
+    </script></>
+    )}
+    
+
     <!-- Third-party resource hints -->
     <link rel="dns-prefetch" href="https://web3forms.com" />
     <!-- <link rel="dns-prefetch" href="https://js.hcaptcha.com" /> -->

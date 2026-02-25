@@ -47,14 +47,22 @@ const { services } = Astro.props as { services: Service[] };
               </li>
             ))}
           </ul>
-          <a
-            href=`/szolgaltatasok/${service.slug}`
-            class="mb-12 self-end uppercase px-6 py-3 my-8 text-lg rounded-2xl text-bg-dark font-semibold overflow-hidden group cursor-pointer hover:scale-105 duration-300"
-          >
-       
-
-         Tudj meg többet!
-          </a>
+      <a
+  href={`/szolgaltatasok/${service.slug}`}
+  class="mb-12 flex flex-row items-center justify-center gap-2 font-family-space self-end uppercase px-6 py-3 hover:bg-white my-8 text-lg rounded-2xl text-bg-dark font-semibold overflow-hidden group cursor-pointer hover:scale-105 duration-300"
+>
+  <span>Tudj meg többet!</span>
+  
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="24" 
+    height="24" 
+    viewBox="0 0 24 24" 
+    class="transition-transform group-hover:translate-x-1"
+  >
+    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m13 8l4 4l-4 4M7 8l4 4l-4 4"/>
+  </svg>
+</a>
         </article>
       ))
     }

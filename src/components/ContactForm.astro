@@ -88,6 +88,21 @@
     { rootMargin: '200px' }
   );
 
-  const form = document.querySelector('form[action*="web3forms"]');
-  if (form) observer.observe(form);
+  const form = document.querySelector<HTMLFormElement>(
+    'form[action*="web3forms"]'
+  );
+
+  if (form) {
+    const button = form.querySelector<HTMLButtonElement>(
+      "button[type='submit']"
+    );
+
+    form.addEventListener('submit', () => {
+      if (button) {
+        button.disabled = true;
+        button.classList.add('opacity-50', 'cursor-not-allowed');
+        button.innerHTML = 'Küldés...';
+      }
+    });
+  }
 </script>

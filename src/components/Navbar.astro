@@ -68,6 +68,7 @@ const links = [
     id="mobileMenu"
     class="fixed left-0 top-0 z-50 h-dvh w-full -translate-x-full bg-linear-to-r from-gray-700 to-teal-900 text-white transition-transform duration-200 ease-out"
     aria-hidden="true"
+    inert
   >
     <div class="flex h-16 pt-8 items-center justify-between px-4">
       <a href="/"
@@ -113,47 +114,63 @@ const links = [
     const overlay = document.getElementById('overlay');
     const mobileMenu = document.getElementById('mobileMenu');
 
-    console.log('Elements:', { menuBtn, closeBtn, overlay, mobileMenu });
+    const isMenuOpen = () => menuBtn?.getAttribute('aria-expanded') === 'true';
+
+    const getFirstFocusableInMenu = () => {
+      if (!mobileMenu) return null;
+      return mobileMenu.querySelector(
+        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+    };
 
     const openMenu = () => {
-      console.log('Opening menu');
       if (!overlay || !mobileMenu || !menuBtn) {
-        console.error('Missing elements');
         return;
       }
       overlay.classList.remove('hidden');
       mobileMenu.classList.remove('-translate-x-full');
       menuBtn.setAttribute('aria-expanded', 'true');
       mobileMenu.setAttribute('aria-hidden', 'false');
+      mobileMenu.removeAttribute('inert');
       document.body.style.overflow = 'hidden';
+
+      const el = getFirstFocusableInMenu();
+      if (el && typeof el.focus === 'function') {
+        // Ensure focus happens after classes/attributes are applied.
+        setTimeout(() => el.focus(), 0);
+      }
     };
 
     const closeMenu = () => {
-      console.log('Closing menu');
       if (!overlay || !mobileMenu || !menuBtn) return;
       overlay.classList.add('hidden');
       mobileMenu.classList.add('-translate-x-full');
       menuBtn.setAttribute('aria-expanded', 'false');
       mobileMenu.setAttribute('aria-hidden', 'true');
+      mobileMenu.setAttribute('inert', '');
       document.body.style.overflow = '';
+
+      if (typeof menuBtn.focus === 'function') {
+        setTimeout(() => menuBtn.focus(), 0);
+      }
     };
 
     menuBtn?.addEventListener('click', () => {
-      console.log('Menu button clicked');
-      openMenu();
+      if (isMenuOpen()) closeMenu();
+      else openMenu();
     });
     closeBtn?.addEventListener('click', () => {
-      console.log('Close button clicked');
       closeMenu();
     });
     overlay?.addEventListener('click', closeMenu);
 
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
+      if (e.key === 'Escape' && isMenuOpen()) closeMenu();
     });
 
     mobileMenu?.addEventListener('click', (e) => {
-      const target = e.target as HTMLElement;
+      const target = e.target;
+      if (!(target instanceof Element)) return;
       const a = target.closest('a');
       if (a) closeMenu();
     });

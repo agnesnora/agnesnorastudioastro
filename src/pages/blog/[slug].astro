@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import type { SanityDocument } from '@sanity/client';
+import { sanityClient } from 'sanity:client';
+import {
+  createImageUrlBuilder,
+  type SanityImageSource,
+} from '@sanity/image-url';
+import { PortableText } from 'astro-portabletext';
+import type { GetStaticPaths } from 'astro';
+
+const slug = Astro.params.slug;
+
+const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
+  _id,
+  title,
+  publishedAt,
+  body,
+  "heroImage": coalesce(image, mainImage, coverImage),
+  "heroImageAlt": coalesce(image.alt, mainImage.alt, coverImage.alt, title)
+}`;
+const post = /** @type {SanityDocument} */ (
+  await sanityClient.fetch(POST_QUERY, { slug })
+);
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const SLUGS_QUERY = `*[_type == "post" && defined(slug.current)]{
+    "params": {"slug": slug.current}
+  }`;
+
+  return await sanityClient.fetch(SLUGS_QUERY);
+};
+
+const { projectId, dataset } = sanityClient.config();
+const urlFor = (source: SanityImageSource) =>
+  projectId && dataset
+    ? createImageUrlBuilder({ projectId, dataset }).image(source)
+    : null;
+const postImageUrl = post?.heroImage
+  ? urlFor(post.heroImage as SanityImageSource)
+      ?.width(1200)
+      .height(675)
+      .url()
+  : null;
+const postImageSmall = post?.heroImage
+  ? urlFor(post.heroImage as SanityImageSource)
+      ?.width(600)
+      .url()
+  : null;
+
+const postImageMedium = post?.heroImage
+  ? urlFor(post.heroImage as SanityImageSource)
+      ?.width(1200)
+      .url()
+  : null;
+
+const postImageLarge = post?.heroImage
+  ? urlFor(post.heroImage as SanityImageSource)
+      ?.width(2000)
+      .url()
+  : null;
+---
+
+<Layout
+  title={`${post?.title ?? 'Blog'} | Agnesnora Studio`}
+  description="Blog bejegyzés"
+  canonical={`https://agnesnorastudio.hu/blog/${slug ?? ''}`}
+>
+  <main class="mx-auto min-h-screen max-w-3xl px-4 py-12 flex flex-col gap-6">
+    <a href="/blog" class="hover:underline">&larr; Vissza a bloghoz</a>
+
+    {
+      postImageUrl && (
+        <img
+          src={postImageMedium}
+          srcset={`
+    ${postImageSmall} 600w,
+    ${postImageMedium} 1200w,
+    ${postImageLarge} 2000w
+  `}
+          sizes="(max-width: 768px) 100vw, 768px"
+          alt={post?.heroImageAlt ?? post?.title ?? 'Blog kép'}
+          class="w-full h-auto rounded-2xl"
+          loading="eager"
+        />
+      )
+    }
+
+    <header class="flex flex-col gap-2">
+      <h1 class="text-4xl font-black font-family-space">{post.title}</h1>
+      {
+        post.publishedAt && (
+          <p class="text-sm text-primary-text/70">
+            Közzétéve: {new Date(post.publishedAt).toLocaleDateString()}
+          </p>
+        )
+      }
+    </header>
+
+    <article class="prose prose-lg max-w-none">
+      {Array.isArray(post.body) && <PortableText value={post.body} />}
+    </article>
+  </main>
+</Layout>

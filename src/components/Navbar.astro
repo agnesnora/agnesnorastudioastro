@@ -5,6 +5,7 @@ const links = [
   { href: '/#legutobbi-munkaim', label: 'Munkáim' },
   { href: '/#kapcsolat', label: 'Kapcsolat' },
   { href: '/#arak', label: 'Árak' },
+  { href: '/blog', label: 'Blog' },
   {
     href: 'https://tidycal.com/agnesnorastudio/30-minute-meeting',
     label: 'Időpontfoglalás',
@@ -109,9 +110,13 @@ const links = [
   </aside>
 
   <script>
+    /** @type {HTMLButtonElement | null} */
     const menuBtn = document.getElementById('menuBtn');
+    /** @type {HTMLButtonElement | null} */
     const closeBtn = document.getElementById('closeBtn');
+    /** @type {HTMLElement | null} */
     const overlay = document.getElementById('overlay');
+    /** @type {HTMLElement | null} */
     const mobileMenu = document.getElementById('mobileMenu');
 
     const isMenuOpen = () => menuBtn?.getAttribute('aria-expanded') === 'true';
@@ -119,7 +124,7 @@ const links = [
     const getFirstFocusableInMenu = () => {
       if (!mobileMenu) return null;
       return mobileMenu.querySelector(
-        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
       );
     };
 
@@ -135,7 +140,7 @@ const links = [
       document.body.style.overflow = 'hidden';
 
       const el = getFirstFocusableInMenu();
-      if (el && typeof el.focus === 'function') {
+      if (el instanceof HTMLElement) {
         // Ensure focus happens after classes/attributes are applied.
         setTimeout(() => el.focus(), 0);
       }

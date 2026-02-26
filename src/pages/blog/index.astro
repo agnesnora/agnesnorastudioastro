@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { sanityClient } from 'sanity:client';
+
+type PostListItem = {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  publishedAt?: string;
+};
+
+const POSTS_QUERY = `*[
+  _type == "post"
+  && defined(slug.current)
+]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt}`;
+
+const posts = /** @type {PostListItem[]} */ (await sanityClient.fetch(POSTS_QUERY));
+---
+
+<Layout
+  title="Blog | Agnesnora Studio"
+  description="Blog bejegyzések"
+  canonical="https://agnesnorastudio.hu/blog"
+>
+  <main class="mx-auto min-h-screen max-w-3xl px-4 py-12">
+    <h1 class="text-4xl font-black mb-8 font-family-space">Blog</h1>
+    <ul class="flex flex-col gap-y-4">
+      {
+        posts.map((post) => (
+          <li class="font-family-space">
+            <a
+              href={`/blog/${post.slug.current}`}
+              class="block rounded-2xl border border-black/10 p-5 hover:bg-sage-bg-light/40 transition"
+            >
+              <h2 class="text-xl font-bold">{post.title}</h2>
+              <p class="text-sm text-primary-text/70">
+                {new Date(post.publishedAt).toLocaleDateString()}
+              </p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>

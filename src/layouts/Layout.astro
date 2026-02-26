@@ -21,17 +21,30 @@ const { title, description, canonical } = Astro.props;
     <link rel="canonical" href={canonical} />
     <title>{title}</title>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H4187EYG0D"
-    ></script>
-{ import.meta.env.PROD && (<><script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function gtag() {
-        window.dataLayer.push(arguments);
-      };
-      window.gtag('js', new Date());
-      window.gtag('config', 'G-XXXXXXX');
-    </script></>
+    {import.meta.env.PROD && (
+      <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          window.dataLayer.push(arguments);
+        };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-H4187EYG0D');
+
+        const loadGtag = () => {
+          if (document.querySelector('script[data-gtag="true"]')) return;
+          const s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-H4187EYG0D';
+          s.dataset.gtag = 'true';
+          document.head.appendChild(s);
+        };
+
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadGtag, { timeout: 2000 });
+        } else {
+          setTimeout(loadGtag, 1);
+        }
+      </script>
     )}
     
 

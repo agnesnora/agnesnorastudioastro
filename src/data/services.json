@@ -42,7 +42,7 @@
     },
     {
       "id": 2,
-      "title": "Weboldalfejlesztés",
+      "title": "Weboldal",
       "longTitle": "Gyors, stabil és jövőbiztos weboldalak",
       "description": "Gyors, SEO-barát weboldalak modern technológiával (Next.js, Astro), hosszú távra tervezve.",
       "features": [

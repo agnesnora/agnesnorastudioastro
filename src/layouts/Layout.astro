@@ -22,9 +22,16 @@ const { title, description, canonical } = Astro.props;
   
     <meta name="generator" content={Astro.generator} />
     
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="/fb.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Agnes Nora Studio" />
     
-    
-
     {import.meta.env.PROD && (
       <script is:inline>
         window.dataLayer = window.dataLayer || [];
@@ -52,17 +59,9 @@ const { title, description, canonical } = Astro.props;
     )}
     
 
-    <!-- Third-party resource hints -->
+   
     <link rel="dns-prefetch" href="https://web3forms.com" />
-     <meta property="og:description" content={description} /> <meta property="og:url" content={canonical} />  <!-- <meta property="og:title" content={title} />
-    <!-- <link rel="dns-prefetch" href="https://js.hcaptcha.com" /> -->
-
-    <!-- Open Graph -->
   
-   
-   
-    <meta property="og:type" content="website" />
-    <!-- <meta property="og:image" content="/og-cover.jpg" /> -->
   </head>
   <body>
     <Header />

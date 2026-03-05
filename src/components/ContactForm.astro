@@ -56,7 +56,22 @@
     rows="5"
     required
     minlength="10"></textarea>
-  <!-- <div class="h-captcha mt-4" data-captcha="true"></div> -->
+
+  <div class="w-full my-6 flex items-center">
+    <input
+      type="checkbox"
+      id="gdpr-accept"
+      name="gdpr-accept"
+      required
+      class="mr-3 w-5 h-5"
+    />
+    <label for="gdpr-accept" class="text-left text-primary-text">
+      Elolvastam és elfogadom az
+      <a href="/adatkezeles" class="text-blue-600 hover:underline underline"
+        >adatkezelési tájékoztatót</a
+      >
+    </label>
+  </div>
 
   <button
     type="submit"

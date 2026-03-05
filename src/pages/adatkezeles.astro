@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Adatkezelési tájékoztató';
+const description = 'Adatkezelési tájékoztató az Agnesnora Studio részéről';
+const canonical = 'https://agnesnorastudio.hu/adatkezeles';
+---
+
+<Layout {title} {canonical} {description}>
+  <div class="min-h-screen bg-primary-bg py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <div class="bg-white rounded-lg shadow-md p-8">
+        <h1 class="text-3xl font-bold text-primary-text mb-8 text-center">
+          Adatkezelési tájékoztató
+        </h1>
+
+        <div class="space-y-8 text-primary-text">
+          <!-- 1. Az adatkezelő adatai -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4">1. Az adatkezelő adatai</h2>
+            <p class="mb-4">
+              Az adatkezelő elkötelezett a személyes adatok védelme mellett, és
+              az adatkezelés során betartja az Európai Unió általános
+              adatvédelmi rendeletét (GDPR).
+            </p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><strong>Adatkezelő neve:</strong> Kuti-Palásthy Ágnes</li>
+              <li><strong>Email:</strong> info@agnesnorastudio.hu</li>
+              <li><strong>Weboldal:</strong> agnesnorastudio.hu</li>
+            </ul>
+          </section>
+
+          <!-- 2. A kezelt adatok köre -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4">2. A kezelt adatok köre</h2>
+            <p class="mb-4">
+              A weboldalon történő kapcsolatfelvétel során az alábbi személyes
+              adatok kerülhetnek kezelésre:
+            </p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>név</li>
+              <li>email cím</li>
+              <li>üzenet tartalma</li>
+            </ul>
+            <p class="mt-4">
+              Az adatok megadása önkéntes, azonban a kapcsolatfelvételhez
+              szükséges.
+            </p>
+          </section>
+
+          <!-- 3. Az adatkezelés célja -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4">3. Az adatkezelés célja</h2>
+            <p>A személyes adatok kezelése az alábbi célból történik:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>kapcsolatfelvételi üzenetek megválaszolása</li>
+              <li>kommunikáció az érdeklődőkkel</li>
+              <li>időpont-egyeztetés</li>
+            </ul>
+          </section>
+
+          <!-- 4. Az adatkezelés jogalapja -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4">
+              4. Az adatkezelés jogalapja
+            </h2>
+            <p>
+              Az adatkezelés jogalapja az érintett önkéntes hozzájárulása a GDPR
+              6. cikk (1) bekezdés a) pontja alapján.
+            </p>
+          </section>
+
+          <!-- 5. Harmadik fél szolgáltatók -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4">
+              5. Harmadik fél szolgáltatók
+            </h2>
+            <p class="mb-4">
+              A weboldal működése során az alábbi külső szolgáltatók is részt
+              vehetnek az adatok feldolgozásában:
+            </p>
+
+            <h3 class="text-xl font-medium mt-4 mb-2">
+              Kapcsolatfelvételi űrlap
+            </h3>
+            <p class="mb-4">
+              A weboldal kapcsolatfelvételi űrlapja a Web3Forms szolgáltatást
+              használhatja az üzenetek továbbításához.
+            </p>
+
+            <h3 class="text-xl font-medium mt-4 mb-2">Időpontfoglalás</h3>
+            <p>
+              Az időpontfoglalás a TidyCal rendszerén keresztül történhet, amely
+              saját adatkezelési szabályzattal rendelkezik.
+            </p>
+            <p class="mt-4">
+              Az ezen szolgáltatók által végzett adatkezelésre azok saját
+              adatvédelmi szabályzata vonatkozik.
+            </p>
+          </section>
+
+          <!-- 6. Az adatok tárolásának időtartama -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4">
+              6. Az adatok tárolásának időtartama
+            </h2>
+            <p>
+              A személyes adatokat az adatkezelő csak a kapcsolatfelvételhez
+              szükséges ideig kezeli.
+            </p>
+            <p>
+              Az adatokat legfeljebb 12 hónapig tároljuk, vagy az érintett
+              kérésére korábban töröljük.
+            </p>
+          </section>
+
+          <!-- 7. Az érintettek jogai -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4">7. Az érintettek jogai</h2>
+            <p>Az érintettek jogosultak:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>tájékoztatást kérni személyes adataik kezeléséről</li>
+              <li>kérni adataik helyesbítését</li>
+              <li>kérni adataik törlését</li>
+              <li>kérni az adatkezelés korlátozását</li>
+              <li>tiltakozni az adatkezelés ellen</li>
+            </ul>
+            <p class="mt-4">
+              Kérelmüket az adatkezelő email címére küldhetik el.
+            </p>
+          </section>
+
+          <!-- 8. Panasztétel lehetősége -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4">
+              8. Panasztétel lehetősége
+            </h2>
+            <p>
+              Amennyiben az érintett úgy véli, hogy személyes adatai kezelése
+              sérti a jogszabályokat, panaszt tehet a következő hatóságnál:
+            </p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>
+                <strong>Hatóság:</strong> Nemzeti Adatvédelmi és Információszabadság
+                Hatóság
+              </li>
+              <li>
+                <strong>Weboldal:</strong>
+                <a href="https://naih.hu" class="text-blue-600 hover:underline"
+                  >https://naih.hu</a
+                >
+              </li>
+            </ul>
+          </section>
+
+          <!-- 9. Cookie-k -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4">9. Cookie-k</h2>
+            <p>
+              A weboldal alapvetően nem használ marketing vagy követési célú
+              cookie-kat.
+            </p>
+            <p>
+              Amennyiben a jövőben ilyen szolgáltatás kerül bevezetésre (pl.
+              analitika vagy marketing eszközök), a weboldal ennek megfelelő
+              cookie tájékoztatót és hozzájárulási rendszert fog alkalmazni.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

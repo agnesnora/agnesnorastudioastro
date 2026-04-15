@@ -128,7 +128,7 @@
     {
       "id": 4,
       "title": "Weboldal Audit és Migráció",
-      "longTitle": "Modern webdizájn, ami segít kitűnni a versenytársaid közül.",
+      "longTitle": "Audit és migráció egy átláthatóbb, hatékonyabb weboldalért.",
       "slug": "weboldal-audit",
       "description": "Meglévő weboldalad technikai rendbetétele, gyorsítása és biztonságos költöztetése.",
       "features": [
@@ -145,7 +145,7 @@
         "Magas a visszafordulási arány",
 
         "Lassú az oldal",
-        "PNem tudod miért nem teljesít jól"
+        "Nem tudod miért nem teljesít jól"
       ],
       "longFeatures": [
         "Technikai és SEO állapotfelmérés",

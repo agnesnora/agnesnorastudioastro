@@ -1,0 +1,87 @@
+<div
+  id="cookie-banner"
+  class="fixed bottom-0 left-0 right-0 bg-secondary-bg text-primary-text p-4 shadow-lg z-50"
+>
+  <div
+    class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+  >
+    <div class="flex-1 text-center md:text-left">
+      <p class="text-sm md:text-base">
+        Weboldalunk cookie-kat használ a felhasználói élmény javítására és a
+        statisztikai adatok gyűjtéséhez. A böngészés folytatásával elfogadja a
+        cookie-k használatát.
+        <a href="/adatkezeles" class="text-blue-600 hover:underline underline"
+          >Tudj meg többet</a
+        >
+      </p>
+    </div>
+    <div class="flex gap-3">
+      <button
+        id="accept-cookies"
+        class="px-4 py-2 bg-button-primary text-white rounded-lg hover:bg-button-hover transition-colors text-sm md:text-base font-medium"
+      >
+        Elfogadom
+      </button>
+      <button
+        id="decline-cookies"
+        class="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition-colors text-sm md:text-base font-medium"
+      >
+        Elutasítom
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Cookie banner kezelése
+  const cookieBanner = document.getElementById('cookie-banner');
+  const acceptButton = document.getElementById('accept-cookies');
+  const declineButton = document.getElementById('decline-cookies');
+
+  // Ellenőrizzük, hogy a felhasználó már elfogadta-e a cookie-kat
+  if (cookieBanner && localStorage.getItem('cookiesAccepted') === 'true') {
+    cookieBanner.style.display = 'none';
+  }
+
+  // Cookie elfogadása
+  if (acceptButton) {
+    acceptButton.addEventListener('click', () => {
+      localStorage.setItem('cookiesAccepted', 'true');
+      localStorage.setItem('cookiesAcceptedDate', new Date().toISOString());
+      if (cookieBanner) {
+        cookieBanner.style.display = 'none';
+      }
+
+      // Itt lehet hozzáadni a Google Analytics vagy más követők betöltését
+      // Például: gtag('config', 'G-H4187EYG0D');
+    });
+  }
+
+  // Cookie elutasítása
+  if (declineButton) {
+    declineButton.addEventListener('click', () => {
+      localStorage.setItem('cookiesAccepted', 'false');
+      if (cookieBanner) {
+        cookieBanner.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+<style>
+  /* Cookie banner animáció */
+  #cookie-banner {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>

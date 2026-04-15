@@ -163,6 +163,7 @@
         "Biztonsági frissítések és mentések",
         "Platformváltás támogatása"
       ],
+      "CTA": "Ha van egy félkész oldalad vagy elakadt fejlesztésed, nézzük át a hibákat és tervezzünk egy stabil migrációt. Hozzuk ki a maximumot a rendszeredből.",
 
       "bgColor": "bg-sage-bg-dark",
       "color": "text-secondary-text"
